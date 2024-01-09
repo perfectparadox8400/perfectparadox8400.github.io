@@ -1,0 +1,94 @@
+<style>
+ @-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to { 
+    -webkit-transform: rotate(360deg);
+  }
+}
+    .lode {
+        height: 100% !important;
+        transition: all 0.5s;
+    }
+    .lod {
+        display: none !important;
+        transition: all 0.5s;
+    }
+    .bigg {
+        margin-left: 37.5% !important;
+        margin-right: 37.5% !important;
+       width: 25% !important;
+       -webkit-animation-name:            rotate; 
+    -webkit-animation-duration:        3s; 
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    transition: all 0.5s;
+    }
+    .float-center {
+       margin-top: 8% !important;
+       transition: all 0.5s;
+    }
+    .loder {
+        width: 80%;
+        transition: all 0.5s;
+    }
+    .fixx {
+        position: relative;
+    }
+    .lodbar {
+        width: 125%;
+        transition: all 0.5s;
+        background-color: #afb0b3;
+        border-radius: 5px;}
+    .persent {
+        width: 0%;
+        transition: all 0.5s;
+        background-color: #5e068a;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        border-radius: 5px;
+    }
+  .logo, html {
+   background-color: white; 
+  position: relative; z-index: 99999;
+  }
+</style>
+<div id="lode" class="logo float-center">
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <h1 class="text-light"><a href="#header"><span>NewBiz</span></a></h1> -->
+        <a href="#intro">
+                <img id="headerr" class="bigg" src="https://perfectparadox8400.000webhostapp.com/img/l.png" heigth="100%"><div id="lod" class="lod" style=display:inline-block;vertical-align:center>&nbsp;Perfect Paradox's 8400</div></a>
+      <div id="dlod" class="loder">
+          <div class="fixx">
+          <div class="float-center lodbar">&nbsp;Loding...
+          <div id="barr" class="persent">&nbsp;</div>
+             </div>
+            <h3>Forwarding to new url!</h3>
+         </div>
+        </div>
+      </div>
+<script>
+      var w = 5;
+var mylod = setInterval(myTimer, 500);
+function myTimer() {
+    if(w>100) {
+      myStopFunction();
+  } else{
+  w = w + 6.25;
+    document.getElementById('barr').style.width = w + '%';
+  }
+}
+function myStopFunction() {
+  clearInterval(mylod);
+  window.parent.postMessage("To page code", "https://perfectparadox8400.000webhostapp.com/");
+    console.log("message to");
+if (window.self !== window.parent) { // checking if it is an iframe
+  window.parent.location.href = 'https://perfectparadox8400.000webhostapp.com/';
+} else {
+  window.location.href = 'https://perfectparadox8400.000webhostapp.com/';
+}
+}
+      </script>

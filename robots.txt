@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://perfectparadox8400.000webhostapp.com/sitemap.xml
