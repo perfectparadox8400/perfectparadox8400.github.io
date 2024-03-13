@@ -7,7 +7,7 @@
    <!-- Google Fonts -->
   </head>
   <style>
-   @-webkit-keyframes rotate {
+  @keyframes rotate {
   from {
     -webkit-transform: rotate(0deg);
   }
@@ -24,15 +24,19 @@
         transition: all 0.5s;
     }
     .bigg {
-        margin-top: 5% !important;
-        margin-left: 27.5% !important;
-        margin-right: 27.5% !important;
-       -webkit-animation-name:            rotate; 
-    -webkit-animation-duration:        3s; 
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-    transition: all 0.5s;
-    width: 45% !important;
+      margin-top: 5% !important;
+      margin-left: 27.5% !important;
+      margin-right: 27.5% !important;
+      -webkit-animation-name: rotate;
+      animation-name: rotate;
+      -webkit-animation-duration: 3s;
+      animation-duration: 3s;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+      transition: all 0.5s;
+      width: 45% !important;
     }
     .float-center {
        margin-top: 8% !important;

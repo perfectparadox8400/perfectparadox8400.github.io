@@ -44,9 +44,6 @@ CREATE TABLE `login` (
 INSERT INTO `login` (`id`, `username`, `password`, `type`) VALUES
 (1, '8400', 'abc', 'G'),
 (2, '8400-J', 'abc', 'J'),
-(3, 'Allan-Admin', 'O4RDY9X5', 'A'),
-(4, 'Briget', 'eastep', 'M'),
-(5, 'Allan', 'O4RDY9X5', 'T');
 
 -- --------------------------------------------------------
 

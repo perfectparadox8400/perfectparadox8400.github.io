@@ -7,9 +7,9 @@ php_value display_errors 1
 
 # DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:15574273:
 RewriteEngine On 
-RewriteCond %{HTTP_HOST} ^perfectparadox8400.000webhostapp.com [NC]
+RewriteCond %{HTTP_HOST} ^https://perfectparadox8400.github.io/ [NC]
 RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://perfectparadox8400.000webhostapp.com/ [R,L]
+RewriteRule ^(.*)$ https://perfectparadox8400.github.io/ [R,L]
 <IfModule mod_php5.c>
     #Session timeout
     php_value session.cookie_lifetime 86400
