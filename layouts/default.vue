@@ -1,0 +1,4 @@
+<template>
+    <AppHeader />
+    <ContentDoc />
+</template>
