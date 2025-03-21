@@ -95,6 +95,31 @@ h6 {
   -webkit-animation: animate-preloader 1s linear infinite;
   animation: animate-preloader 1s linear infinite;
 }
+
+@-webkit-keyframes animate-preloader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-preloader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -120,18 +145,21 @@ h6 {
   background: transparent !important;
 }
 #headerrr.header-scrolledd {
-
+  height: 60px;   
+  transition: all 0.5s;
 }
 #headerr.header-scrolleddd {
-
+  width: 60px;   
+  transition: all 0.5s;
 }
 #headerr {
-  width: 100px;
+  width: 80px;   
   transition: all 0.5s;  
 }
 .header.header-scrolled,
 .header.header-pages {
   height: 66px;
+  padding: 10px 0;
   transition: all 0.5s;
 }
 
@@ -159,8 +187,7 @@ h6 {
 #headerrr .logo img{
   padding: 0;
   margin: 0px 0;
-  width: 80px;
-  height 80px;
+  
   transition: all 0.5s;
 }
 .main-pages {
@@ -875,8 +902,10 @@ html, body {
 }
 
 #testimonials .testimonial-item .testimonial-img {
-  width: 300px;
+  width: 120px;
+  border-radius: 50%;
   border: 4px solid #fff;
+  float: left;
 }
 
 #testimonials .testimonial-item h3 {

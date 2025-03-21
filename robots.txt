@@ -1,4 +1,0 @@
-User-Agent: *
-Allow: /
-
-Sitemap: https://perfectparadox8400.github.io/sitemap.xml
