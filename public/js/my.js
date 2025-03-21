@@ -17,3 +17,17 @@ function externalLinks() {
 }
 
 externalLinks();
+
+function disableScrolling() {
+  var x = window.scrollX;
+  var y = window.scrollY;
+  window.onscroll = function () { window.scrollTo(x, y); };
+  $('body').bind('touchmove', function (e) { e.preventDefault() })
+}
+
+function enableScrolling() {
+  window.onscroll = function () { };
+  $('body').unbind('touchmove')
+}
+
+disableScrolling();
