@@ -28,10 +28,10 @@
 			if (target.length) {
 				var top_space = 20;
 
-				if ($("#headerrr").length) {
-					top_space = $("#headerrr").outerHeight();
+				if ($("#header").length) {
+					top_space = $("#header").outerHeight();
 
-					if (!$("#headerrr").hasClass("header-scrolledd")) {
+					if (!$("#header").hasClass("header-scrolledd")) {
 						top_space = top_space - 0;
 					}
 				}
@@ -62,7 +62,7 @@
 	// Navigation active state on scroll
 	var nav_sections = $("section");
 	var main_nav = $(".main-nav, .mobile-nav");
-	var main_nav_height = $("#headerrr").outerHeight();
+	var main_nav_height = $("#header").outerHeight();
 
 	$(window).on("scroll", function () {
 		var cur_pos = $(this).scrollTop();
@@ -92,8 +92,9 @@
 		autoplay: true,
 		dots: true,
 		loop: true,
+		lazyLoad: true,
 		items: 1,
-		delay: 100,
+		autoplayTimeout: 4000,
 	});
 })(jQuery);
 

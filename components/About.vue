@@ -4,13 +4,115 @@
             <header class="section-header">
                 <h3>About Us</h3>
                 <p>
-                    We are Perfect Paradox Team 8400, located in Cedar City, Utah. We are so excited to have been
-                    able to learn and grow this season. This year, we have more than doubled our previous numbers by
-                    recruiting 10 new team members. We have impacted over 1,880 people, gained 260+ outreach hours,
-                    and 171+ mentor hours. We have also constructed a robot that we are very proud of, and hope to
-                    be able to improve it throughout the season.
+                    {{ website.home.about }}
                 </p>
             </header>
         </div>
     </section>
 </template>
+
+<script setup>
+import website from '../website.json';
+</script>
+
+<style scoped>
+#about {
+  background: #fff;
+  padding: 60px 0;
+}
+
+#about .about-container .background {
+  margin: 20px 0;
+}
+
+#about .about-container .content {
+  background: #fff;
+}
+
+#about .about-container .title {
+  color: #333;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+#about .about-container p {
+  line-height: 26px;
+}
+
+#about .about-container p:last-child {
+  margin-bottom: 0;
+}
+
+#about .about-container .icon-box {
+  background: #fff;
+  background-size: cover;
+  padding: 0 0 30px 0;
+}
+
+#about .about-container .icon-box .icon {
+  float: left;
+  background: #fff;
+  width: 64px;
+  height: 64px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 50%;
+  border: 2px solid #007bff;
+  transition: all 0.3s ease-in-out;
+}
+
+#about .about-container .icon-box .icon i {
+  color: #007bff;
+  font-size: 24px;
+}
+
+#about .about-container .icon-box:hover .icon {
+  background: #007bff;
+}
+
+#about .about-container .icon-box:hover .icon i {
+  color: #fff;
+}
+
+#about .about-container .icon-box .title {
+  margin-left: 80px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+#about .about-container .icon-box .title a {
+  color: #283d50;
+}
+
+#about .about-container .icon-box .description {
+  margin-left: 80px;
+  line-height: 24px;
+  font-size: 14px;
+}
+
+#about .about-extra {
+  padding-top: 60px;
+}
+
+#about .about-extra h4 {
+  font-weight: 600;
+  font-size: 24px;
+}
+</style>

@@ -1,7 +1,7 @@
 <template>
     <div>
         <button ref="mobileNav" type="button" class="mobile-nav-toggle d-lg-none navbar-size load-hide"><i class="fa fa-bars"></i></button>
-        <header ref="header" class="fixed-top header">
+        <header ref="header" id="header" class="fixed-top header">
             <div class="container" style="height: 100%;">
                 <div ref="loadingBox" class="loading">
                     <div class="logo-box">
@@ -80,7 +80,6 @@ const handleScroll = () => {
 onMounted(async () => {
     loading = setInterval(loadingTimer, 1000);
     loaded();
-    window.addEventListener('scroll', handleScroll);
 });
 
 onUnmounted(() => {
@@ -104,8 +103,8 @@ const loaded = () => {
             title.value?.classList.remove('load-hide');
             nav.value?.classList.remove('load-hide');
             mobileNav.value?.classList.remove('load-hide');
+            window.addEventListener('scroll', handleScroll);
         }, 500);
-        handleScroll();
     }, 750);
 };
 </script>

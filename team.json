@@ -1,0 +1,80 @@
+[
+    {
+        "name": "Allan",
+        "role": "Programming Captain",
+        "description": "I am Allan and I love to code and build robots. All I ever do is 🧑‍💻, do school and sleep, oh and I'm 17. :)",
+        "image": "/img/members/allan.jpg"
+    },
+    {
+        "name": "Cason",
+        "role": "Outreach Captain",
+        "description": "I am 17 years old and A senior in high school. I have been on the team for 4 years, and I also love band, choir, cross country, piano, and writing. I squat 255 hehehe",
+        "image": "/img/members/cason.jpg"
+    },
+    {
+        "name": "Jonny",
+        "role": "Build Captain",
+        "description": "I like robots and building things. I enjoy learning how things work and attempting to build them myself. I enjoy singing in CHS's Madrigals choir. I like to spend my free time reading and accidentally taking naps.",
+        "image": "/img/members/jonny.jpg"
+    },
+    {
+        "name": "Melody",
+        "role": "Portfolio Captain",
+        "description": "I am Melody and I am 17 years old, and junior in high school. I am the Portfolio Captain, and enjoy reading, painting, and CAD designi.",
+        "image": "/img/members/melody.jpg"
+    },
+    {
+        "name": "Matthew",
+        "role": "Team Member",
+        "description": "I am 13 years old and in 7th grade. I enjoy reading and listening to audiobooks. You can find me spending my time playing video games which most of the time consists of Mario Kart 8 Deluxe and Hogwarts legecy. I play Mario Kart professonly for my middle school.",
+        "image": "/img/members/matthew.jpg"
+    },
+    {
+        "name": "Porter",
+        "role": "Team Member",
+        "description": "I'm a homeschooler who comes from a family of 14 kids. I take a lot of classes at southwest tech, and am currently enjoying welding.",
+        "image": "/img/members/porter.jpg"
+    },
+    {
+        "name": "Wade",
+        "role": "Team Member",
+        "description": "I am 14 years old and in 8th grade. I like codeing, tech, and building. I am homeschooled and spend most of my time at home which leaves me with lots of time to code and explore technolegy.",
+        "image": "/img/members/wade.jpg"
+    },
+    {
+        "name": "Crosby",
+        "role": "Team Member",
+        "description": "Hi I'm Crosby",
+        "image": "/img/members/crosby.jpg"
+    },
+    {
+        "name": "Emma",
+        "role": "Team Member",
+        "description": "My name is Emma i am in 7th grade and I L🩷ve robotics, and enjoy most physical activity. You can often find me reading any book and being outdoors🌲.",
+        "image": "/img/members/emma.jpg"
+    },
+    {
+        "name": "Jacob",
+        "role": "Team Member",
+        "description": "Hi I am Jacob.",
+        "image": "/img/members/jacob.jpg"
+    },
+    {
+        "name": "Krishna",
+        "role": "Team Member",
+        "description": "I am 12 years old and I am in 7th grade. I am happy I helped the team succeed. I enjoy participating in chess competitions",
+        "image": "/img/members/krishna.jpg"
+    },
+    {
+        "name": "Marshall",
+        "role": "Team Member",
+        "description": "Hi I am Marshall.",
+        "image": "/img/members/marshall.jpg"
+    },
+    {
+        "name": "Tanner",
+        "role": "Team Member",
+        "description": "I am a loyal team member that will take all orders given to better help the team",
+        "image": "/img/members/tanner.jpg"
+    }
+]
