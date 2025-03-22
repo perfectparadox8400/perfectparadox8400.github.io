@@ -1,18 +1,21 @@
 <template>
     <div>
-        <header ref="header" class="fixed-top header header-full">
+        <button ref="mobileNav" type="button" class="mobile-nav-toggle d-lg-none navbar-size load-hide"><i class="fa fa-bars"></i></button>
+        <header ref="header" class="fixed-top header">
             <div class="container">
                 <div ref="loadingBox" class="loading">
-                    <img ref="logo" src="/img/logo.png" class="zoom logo-box">
-                    <div ref="title" class="title hide">
-                        <a href="/">&nbsp;Perfect Paradox's 8400</a>
+                    <div class="logo-box">
+                        <img ref="logo" src="/img/logo.png" class="zoom navbar-size">
+                    </div>
+                    <div ref="title" class="title load-hide">
+                        <a href="/">&nbsp;Perfect Paradox 8400</a>
                     </div>
                     <div ref="loadbar" class="loadbar">
                         <div ref="bar" class="loading-bar">&nbsp;Loading...</div>
                         <p>&nbsp;</p>
                     </div>
                 </div>
-                <nav ref="nav" class="main-nav d-none d-lg-block navbar hide">
+                <nav ref="nav" class="main-nav d-none d-lg-block navbar load-hide">
                     <ul>
                         <li class="drop-down"><a>Home</a>
                             <ul>
@@ -48,6 +51,7 @@
 
 <script setup>
 const nav = ref(null);
+const mobileNav = ref(null);
 const header = ref(null);
 const logo = ref(null);
 const title = ref(null);
@@ -56,10 +60,6 @@ const bar = ref(null);
 const loadingBox = ref(null);
 let loading = null;
 let loadingProgress = 0;
-
-// const enableScrolling = () => {
-//   document.body.style.overflow = 'auto';
-// };
 
 const loadingTimer = () => {
     if (loadingProgress > 90) {
@@ -84,27 +84,23 @@ onMounted(async () => {
 
 const loaded = () => {
     bar.value.style.width = '100%';
-
-  setTimeout(async () => {
-    await nextTick();
-    header.value?.classList.remove('header-full');
-    nav.value?.classList.remove('hide');
-    title.value?.classList.remove('hide');
-    loadbar.value?.classList.add('hide');
-    logo.value?.classList.remove('zoom');
-    loadingBox.value?.classList.remove('loading');
-    loadingBox.value?.classList.add('logo');
-
-    //enableScrolling();
-
-    // setTimeout(() => {
-    //   dlod.value?.classList.add('lood');
-    // }, 100);
-
-    // setTimeout(() => {
-    //   lood.value?.classList.add('lood');
-    // }, 420);
-  }, 750);
+    setTimeout(async () => {
+        loadbar.value?.classList.add('loadbar-hide');
+    }, 250);
+    setTimeout(async () => {
+        await nextTick();
+        header.value?.classList.add('navbar-size');
+        nav.value?.classList.remove('hide');
+        logo.value?.classList.remove('zoom');
+        loadingBox.value?.classList.remove('loading');
+        loadingBox.value?.classList.add('logo');
+        enableScrolling();
+        setTimeout(() => {
+            title.value?.classList.remove('load-hide');
+            nav.value?.classList.remove('load-hide');
+            mobileNav.value?.classList.remove('load-hide');
+        }, 500);
+    }, 750);
 };
 </script>
 
@@ -125,9 +121,8 @@ const loaded = () => {
 
 .header {
     width: 100%;
-    height: 80px;
-    z-index: 9999;
-    transition: all 0.5s;
+    z-index: 997;
+    transition: all 1s;
     padding: 0;
     background: #fff;
     box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
@@ -135,16 +130,34 @@ const loaded = () => {
     top: 0;
     left: 0;
     padding-left: -15px;
+    height: 100svh
 }
 
-.header-full  {
-    height: 100svh;
+.navbar-size {
+    height: 80px;
+}
+
+.navbar-small-size {
+    height: 60px;
 }
 
 .title {
     display: inline-block;
     vertical-align: center;
-    transition: all 0.5s;
+    transition: all 1s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.title a {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #5e068a;
 }
 
 .loading {
@@ -155,36 +168,55 @@ const loaded = () => {
     justify-content: center;
     text-align: center;
     padding: 10svh 0;
-
 }
 
 .logo {
     float: left;
+    display: flex;
+    align-items: center;
 }
 
-.logo-box {
-    transition: all 0.5s;
-}
-
-.logo img {
-    height: 80px;
+.logo-box img {
+    transition: all 1s;
 }
 
 .zoom {
     max-height: 80svh;
-    max-width: 100%;
+    max-width: 80svh;
     margin: auto;
     height: 100svh;
     -webkit-animation: zoom 1.5s linear infinite;
     animation: zoom 1.5s linear infinite;
 }
 
+@media (max-width: 991px) {
+    .zoom {
+        max-height: 60svh;
+        max-width: 60svh;
+    }
+}
+
+@media (max-width: 767px) {
+    .zoom {
+        max-height: 40svh;
+        max-width: 40svh;
+    }
+}
+
+@media (max-width: 574px) {
+    .zoom {
+        max-height: 30svh;
+        max-width: 30svh;
+    }
+}
+
 .loadbar {
-    transition: all 0.5s;
+    transition: all 1s;
     background-color: #afb0b3;
     height: auto;
     border-radius: 5px;
     position: relative;
+    opacity: 1;
 }
 
 .loadbar p {
@@ -204,47 +236,31 @@ const loaded = () => {
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-.lod-hide {
-    opacity: 0;
-    transform: translateY(-100%);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.lood {
+.navbar {
+    height: 80px;
+    z-index: 997;
+    padding: 20px 0;
+    float: right;
+    transition: all 1s ease;
     opacity: 1;
     transform: translateY(0);
 }
 
-.navbar {
-  height: 80px;
-  transition: all 0.5s;
-  z-index: 997;
-  padding: 20px 0;
-  float: right;
+.load-hide {
+    opacity: 0;
+    transform: translateY(-100%);
 }
 
-#headerrr {
-  height: 80px;
-  transition: all 0.5s;
-  z-index: 997;
-  transition: all 0.5s;
-  padding: 0px 0;
-  background: #fff;
-  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
-  transition: all 0.5s;
-  position: fixed;
-  top: 0px;
-  padding-left: -15px;
+.loadbar-hide {
+    opacity: 0;
 }
 
 #headerrr.header-scrolledd {
   height: 60px;   
-  transition: all 0.5s;
 }
 
 #headerr.header-scrolleddd {
   width: 60px;   
-  transition: all 0.5s;
 }
 
 #headerr {
@@ -257,37 +273,5 @@ const loaded = () => {
   height: 66px;
   padding: 10px 0;
   transition: all 0.5s;
-}
-
-#headerrr .logo h1 {
-  font-size: 36px;
-  margin: 0;
-  padding: 0;
-  line-height: 1;
-  font-weight: 400;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  transition: all 0.5s;
-}
-
-#headerrr .logo h1 a {
-    margin: 7px 0;
-    transition: all 0.5s;
-}
-
-#headerrr .logo h1 a:hover {
-  color: #5e068a;
-  text-decoration: none;
-  transition: all 0.5s;
-}
-
-#headerrr .logo img{
-  padding: 0;
-  margin: 0px 0;
-  transition: all 0.5s;
-}
-
-.hide {
-    display: none !important;
 }
 </style>
