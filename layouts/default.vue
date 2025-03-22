@@ -11,7 +11,6 @@
 <script>
     useHead({
         link: [
-            { rel: 'stylesheet', href: 'lib/bootstrap/css/bootstrap.min.css' },
             { rel: 'stylesheet', href: 'lib/font-awesome/css/font-awesome.min.css' },
             { rel: 'stylesheet', href: 'lib/animate/animate.min.css' },
             { rel: 'stylesheet', href: 'lib/ionicons/css/ionicons.min.css' },
