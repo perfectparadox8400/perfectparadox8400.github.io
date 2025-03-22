@@ -2,13 +2,13 @@
     <div>
         <button ref="mobileNav" type="button" class="mobile-nav-toggle d-lg-none navbar-size load-hide"><i class="fa fa-bars"></i></button>
         <header ref="header" class="fixed-top header">
-            <div class="container">
+            <div class="container" style="height: 100%;">
                 <div ref="loadingBox" class="loading">
                     <div class="logo-box">
-                        <img ref="logo" src="/img/logo.png" class="zoom navbar-size">
+                        <img :src="img(website.logo, { format: 'webp', quality: 100})" ref="logo" class="zoom navbar-size" alt="logo" />
                     </div>
                     <div ref="title" class="title load-hide">
-                        <a href="/">&nbsp;Perfect Paradox 8400</a>
+                        <a href="/">&nbsp;{{ website.name }}</a>
                     </div>
                     <div ref="loadbar" class="loadbar">
                         <div ref="bar" class="loading-bar">&nbsp;Loading...</div>
@@ -17,31 +17,14 @@
                 </div>
                 <nav ref="nav" class="main-nav d-none d-lg-block navbar load-hide">
                     <ul>
-                        <li class="drop-down"><a>Home</a>
-                            <ul>
-                                <li><a href="#about">About Us</a></li>
-                                <li><a href="#testimonials">Members</a></li>
-                                <li><a href="#portfolio">Portfolio</a></li>
-                                <li><a href="#team">Team</a></li>
-                                <li><a href="#clients">Sponsors</a></li>
-                                <li><a href="#contact">Contact</a></li>
-                            </ul>
-                        </li>
-                        <li class="drop-down"><a>FIRST</a>
-                            <ul>
-                                <li><a href="https://www.firstinspires.org/robotics/fll">FIRST ® LEGO® League</a></li>
-                                <li><a href="https://www.firstinspires.org/robotics/ftc">FIRST ® Tech Challenge</a></li>
-                                <li><a href="https://www.firstinspires.org/robotics/frc">FIRST ® Robotics
-                                        Competition</a>
+                        <li v-for="item in website.menu" :key="item.title || item.name" :class="{ 'drop-down': item.subMenu }">
+                            <a :href="item.url || '#'">{{ item.title || item.name }}</a>
+                            <ul v-if="item.subMenu">
+                                <li v-for="subItem in item.subMenu" :key="subItem.name">
+                                    <a :href="subItem.url">{{ subItem.name }}</a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="drop-down"><a>More</a>
-                            <ul>
-                                <li><a href="https://perfectparadox8400.wixsite.com/mysite">Old Website</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#contact">Contact Us</a></li>
                     </ul>
                 </nav>
             </div>
@@ -50,6 +33,9 @@
 </template>
 
 <script setup>
+import website from '../website.json';
+const img = useImage();
+
 const nav = ref(null);
 const mobileNav = ref(null);
 const header = ref(null);
@@ -77,9 +63,28 @@ const stoploading = () => {
   }
 };
 
+const handleScroll = () => {
+    if (window.scrollY > 100) {
+        header.value?.classList.add('navbar-small-size');
+        logo.value?.classList.add('navbar-small-size');
+        mobileNav.value?.classList.add('navbar-small-size');
+        nav.value?.classList.add('nav-size');
+    } else {
+        header.value?.classList.remove('navbar-small-size');
+        logo.value?.classList.remove('navbar-small-size');
+        mobileNav.value?.classList.remove('navbar-small-size');
+        nav.value?.classList.remove('nav-size');
+    }
+};
+
 onMounted(async () => {
     loading = setInterval(loadingTimer, 1000);
     loaded();
+    window.addEventListener('scroll', handleScroll);
+});
+
+onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll);
 });
 
 const loaded = () => {
@@ -92,7 +97,7 @@ const loaded = () => {
         header.value?.classList.add('navbar-size');
         nav.value?.classList.remove('hide');
         logo.value?.classList.remove('zoom');
-        loadingBox.value?.classList.remove('loading');
+        loadingBox.value?.classList.add('loading-done');
         loadingBox.value?.classList.add('logo');
         enableScrolling();
         setTimeout(() => {
@@ -100,6 +105,7 @@ const loaded = () => {
             nav.value?.classList.remove('load-hide');
             mobileNav.value?.classList.remove('load-hide');
         }, 500);
+        handleScroll();
     }, 750);
 };
 </script>
@@ -147,27 +153,33 @@ const loaded = () => {
     transition: all 1s ease;
     opacity: 1;
     transform: translateY(0);
+    padding-right: 30px;
 }
 
 .title a {
-    font-size: 18px;
+    font-size: 16px;
     margin: 0;
     padding: 0;
     line-height: 1;
-    font-weight: 400;
-    letter-spacing: 1px;
+    font-weight: 500;
     text-transform: uppercase;
     color: #5e068a;
+    font-family: "Montserrat", sans-serif;
 }
 
 .loading {
-    height: 100svh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
     text-align: center;
     padding: 10svh 0;
+}
+
+.loading-done {
+    flex-direction: row;
+    padding: 0;
 }
 
 .logo {
@@ -178,18 +190,23 @@ const loaded = () => {
 
 .logo-box img {
     transition: all 1s;
+    max-width: 90svh;
+    max-height: 90svh;
 }
 
 .zoom {
-    max-height: 80svh;
-    max-width: 80svh;
     margin: auto;
-    height: 100svh;
+    height: 80svh;
     -webkit-animation: zoom 1.5s linear infinite;
     animation: zoom 1.5s linear infinite;
 }
 
 @media (max-width: 991px) {
+    .logo-box img {
+        max-width: 70svh;
+        max-height: 70svh;
+    }
+
     .zoom {
         max-height: 60svh;
         max-width: 60svh;
@@ -197,6 +214,11 @@ const loaded = () => {
 }
 
 @media (max-width: 767px) {
+    .logo-box img {
+        max-width: 50svh;
+        max-height: 50svh;
+    }
+
     .zoom {
         max-height: 40svh;
         max-width: 40svh;
@@ -204,6 +226,11 @@ const loaded = () => {
 }
 
 @media (max-width: 574px) {
+    .logo-box img {
+        max-width: 40svh;
+        max-height: 40svh;
+    }
+
     .zoom {
         max-height: 30svh;
         max-width: 30svh;
@@ -211,7 +238,7 @@ const loaded = () => {
 }
 
 .loadbar {
-    transition: all 1s;
+    transition: all 0.75s;
     background-color: #afb0b3;
     height: auto;
     border-radius: 5px;
@@ -246,6 +273,10 @@ const loaded = () => {
     transform: translateY(0);
 }
 
+.nav-size {
+    padding: 10px 0;
+}
+
 .load-hide {
     opacity: 0;
     transform: translateY(-100%);
@@ -253,10 +284,6 @@ const loaded = () => {
 
 .loadbar-hide {
     opacity: 0;
-}
-
-#headerrr.header-scrolledd {
-  height: 60px;   
 }
 
 #headerr.header-scrolleddd {
@@ -272,6 +299,6 @@ const loaded = () => {
 .header.header-pages {
   height: 66px;
   padding: 10px 0;
-  transition: all 0.5s;
+    transition: all 0.5s;
 }
 </style>

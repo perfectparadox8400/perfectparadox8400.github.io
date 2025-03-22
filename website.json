@@ -1,0 +1,62 @@
+{
+	"name": "Perfect Paradox 8400",
+	"logo": "/img/logo.png",
+	"menu": [
+		{
+			"title": "Home",
+			"subMenu": [
+				{
+					"name": "About Us",
+					"url": "#about"
+				},
+				{
+					"name": "Members",
+					"url": "#team"
+				},
+				{
+					"name": "Contact",
+					"url": "#contact"
+				},
+				{
+					"name": "Sponsors",
+					"url": "#sponsors"
+				}
+			]
+		},
+		{
+			"title": "FIRST",
+			"subMenu": [
+				{
+					"name": "FIRST ® LEGO® League",
+					"url": "https://www.firstinspires.org/robotics/fll"
+				},
+				{
+					"name": "FIRST ® Tech Challenge",
+					"url": "https://www.firstinspires.org/robotics/ftc"
+				},
+				{
+					"name": "FIRST ® Robotics Competition",
+					"url": "https://www.firstinspires.org/robotics/frc"
+				}
+			]
+		},
+		{
+			"title": "More",
+			"subMenu": [
+				{
+					"name": "Old Website",
+					"url": "https://perfectparadox8400.wixsite.com/mysite"
+				}
+			]
+		},
+		{
+			"name": "Contact Us",
+			"url": "#contact"
+		}
+	],
+	"home": {
+		"team": "/img/team.png",
+		"title": "We are Team 8400 Perfect Paradox",
+		"subtitle": "A FTC Team From Cedar City, Utah"
+	}
+}

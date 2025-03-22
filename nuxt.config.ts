@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['@nuxt/content', 'nuxt-config-schema', '@nuxt/icon', '@nuxtjs/google-fonts'],
+  modules: ['@nuxt/content', 'nuxt-config-schema', '@nuxt/icon', '@nuxtjs/google-fonts', '@nuxt/image'],
   app: {
     head: {
       htmlAttrs: {

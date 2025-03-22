@@ -2,14 +2,14 @@
     <section id="intro" class="clearfix main-pages intro">
         <div class="container">
             <div class="intro-img">
-                <img src="/img/team.png" alt="" class="img-fluid">
+                <NuxtImg :src=website.home.team alt="team" class="img-fluid" format="webp" quality="100" :placeholder="[1920, 1080, 75, 5]" />
             </div>
             <div class="intro-info">
                 <h2></h2>
                 <h2></h2>
-                <h2>We are Team 8400<br>Perfect Paradox<br></h2>
+                <h2>{{ website.home.title }}<br></h2>
                 <div>
-                    <h5 style="color:white;">A FTC Team From Cedar City, Utah</h5>
+                    <h5 style="color:white;">{{ website.home.subtitle }}</h5>
                     <a href="#about" class="btn-get-started scrollto">About</a>
                     <a href="#contact" class="btn-services scrollto">Contact Us</a>
                 </div>
@@ -17,6 +17,10 @@
         </div>
     </section>
 </template>
+
+<script setup>
+    import website from '../website.json';
+</script>
 
 <style scoped>
 .intro {
@@ -129,7 +133,6 @@
         margin-bottom: 30px;
     }
 }
-
 
 @media (max-width: 574px) {
     .intro {

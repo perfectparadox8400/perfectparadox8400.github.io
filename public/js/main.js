@@ -17,28 +17,6 @@
 	// Initiate the wowjs animation library
 	new WOW().init();
 
-	// Header scroll class
-	$(window).scroll(function () {
-		if ($(this).scrollTop() > 100) {
-			$(".header").addClass("header-scrolled");
-			$("#headerrr").addClass("header-scrolledd");
-			$("#headerr").addClass("header-scrolleddd");
-			$("#headerrrr").addClass("scroledh");
-		} else {
-			$(".header").removeClass("header-scrolled");
-			$("#headerrr").removeClass("header-scrolledd");
-			$("#headerr").removeClass("header-scrolleddd");
-			$("#headerrrr").removeClass("scroledh");
-		}
-	});
-
-	if ($(window).scrollTop() > 100) {
-		$(".header").addClass("header-scrolled");
-		$("#headerrr").addClass("header-scrolledd");
-		$("#headerr").addClass("header-scrolleddd");
-		$("#headerrrr").addClass("scroledh");
-	}
-
 	// Smooth scroll for the navigation and links with .scrollto classes
 	$(".main-nav a, .mobile-nav a, .scrollto").on("click", function () {
 		if (
@@ -130,6 +108,7 @@ $(window).load(function () {
 		$(".hover_bkgr_fricc").hide();
 	});
 });
+
 function externalLinks() {
 	for (var c = document.getElementsByTagName("a"), a = 0; a < c.length; a++) {
 		var b = c[a];

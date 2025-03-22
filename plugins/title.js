@@ -1,3 +1,5 @@
+import website from '../website.json';
+
 export default defineNuxtPlugin((nuxtApp) => {
     const title = useState('pageTitle', () => '');
   
@@ -6,7 +8,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     });
     
     useHead(() => ({
-      title: title.value ? `${title.value} | Perfect Paradox 8400` : 'Perfect Paradox 8400',
-      meta: [{ property: 'og:title', content: title.value ? `${title.value} | Perfect Paradox 8400` : 'Perfect Paradox 8400' }]
+      title: title.value ? `${title.value} | `.website.name : website.name,
+      meta: [{ property: 'og:title', content: title.value ? `${title.value} | `.website.name : website.name }]
     }));
 });
