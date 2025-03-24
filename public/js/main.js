@@ -81,13 +81,12 @@
 		});
 	});
 
-	// jQuery counterUp (used in Whu Us section)
+	// jQuery counterUp (used in Why Us section)
 	$('[data-toggle="counter-up"]').counterUp({
 		delay: 10,
 		time: 1000,
 	});
 
-	// Testimonials carousel (uses the Owl Carousel library)
 	$(".testimonials-carousel").owlCarousel({
 		autoplay: true,
 		dots: true,
@@ -109,32 +108,3 @@ $(window).load(function () {
 		$(".hover_bkgr_fricc").hide();
 	});
 });
-
-function externalLinks() {
-	for (var c = document.getElementsByTagName("a"), a = 0; a < c.length; a++) {
-		var b = c[a];
-		b.getAttribute("href") &&
-			b.hostname !== location.hostname &&
-			(b.target = "_blank");
-	}
-}
-
-externalLinks();
-
-function disableScrolling() {
-	var x = window.scrollX;
-	var y = window.scrollY;
-	window.onscroll = function () {
-		window.scrollTo(x, y);
-	};
-	$("body").bind("touchmove", function (e) {
-		e.preventDefault();
-	});
-}
-
-function enableScrolling() {
-	window.onscroll = function () { };
-	$("body").unbind("touchmove");
-}
-
-disableScrolling();

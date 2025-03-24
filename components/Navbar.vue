@@ -21,7 +21,7 @@
                             <a :href="item.url || '#'">{{ item.title || item.name }}</a>
                             <ul v-if="item.subMenu">
                                 <li v-for="subItem in item.subMenu" :key="subItem.name">
-                                    <a :href="subItem.url">{{ subItem.name }}</a>
+                                    <a :href="subItem.url" :target="subItem.target">{{ subItem.name }}</a>
                                 </li>
                             </ul>
                         </li>
@@ -77,7 +77,26 @@ const handleScroll = () => {
     }
 };
 
+const disableScrolling = () => {
+    var x = window.scrollX;
+    var y = window.scrollY;
+    window.onscroll = function () {
+        window.scrollTo(x, y);
+    };
+    document.body.addEventListener('touchmove', function (e) {
+        e.preventDefault();
+    }, { passive: false });
+};
+
+const enableScrolling = () => {
+    window.onscroll = function () { };
+    document.body.removeEventListener('touchmove', function (e) {
+        e.preventDefault();
+    }, { passive: false });
+}
+
 onMounted(async () => {
+    disableScrolling();
     loading = setInterval(loadingTimer, 1000);
     loaded();
 });

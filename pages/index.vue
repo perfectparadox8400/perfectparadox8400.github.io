@@ -2,5 +2,6 @@
     <Intro />
     <About />
     <Team />
-    <h1>Default Layout</h1>
+    <Contact />
+    <h1>Footer!</h1>
 </template>
