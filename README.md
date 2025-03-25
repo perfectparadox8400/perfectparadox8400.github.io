@@ -33,8 +33,8 @@ Install the following software:
 6. Open your browser and navigate to [http://localhost:3000](http://localhost:3000)
 
 ### Development
-- The website is built using [Next.js](https://nextjs.org/).
-- The website is styled using [Tailwind CSS](https://tailwindcss.com/).
+- The website is built using [Nuxt.js](https://nuxtjs.org/).
+- The website uses vue components [Vuejs](https://vuejs.org/).
 - The website is hosted on [GitHub Pages](https://pages.github.com/).
 
 ### Deployment
@@ -42,7 +42,11 @@ Install the following software:
     ```bash
     yarn build
     ```
-2. Push the changes to the `main` branch
+2. Preview the website
+    ```bash
+    yarn preview
+    ```
+3. Push the changes to the `main` branch
     ```bash
     git add .
     git commit -m "Your commit message"

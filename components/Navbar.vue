@@ -11,14 +11,14 @@
                         <a href="/">&nbsp;{{ website.name }}</a>
                     </div>
                     <div ref="loadbar" class="loadbar">
-                        <div ref="bar" class="loading-bar">&nbsp;Loading...</div>
+                        <div ref="bar" class="loading-bar loading-bar-animated">&nbsp;Loading...</div>
                         <p>&nbsp;</p>
                     </div>
                 </div>
                 <nav ref="nav" class="main-nav d-none d-lg-block navbar load-hide">
                     <ul>
                         <li v-for="item in website.menu" :key="item.title || item.name" :class="{ 'drop-down': item.subMenu }">
-                            <a :href="item.url || '#'">{{ item.title || item.name }}</a>
+                            <a v-bind="item.url === false ? {} : { href: item.url || '#' }">{{ item.title || item.name }}</a>
                             <ul v-if="item.subMenu">
                                 <li v-for="subItem in item.subMenu" :key="subItem.name">
                                     <a :href="subItem.url" :target="subItem.target">{{ subItem.name }}</a>
@@ -44,24 +44,6 @@ const title = ref(null);
 const loadbar = ref(null);
 const bar = ref(null);
 const loadingBox = ref(null);
-let loading = null;
-let loadingProgress = 0;
-
-const loadingTimer = () => {
-    if (loadingProgress > 90) {
-        stoploading();
-    } else {
-        loadingProgress += 6.25;
-        bar.value.style.width = loadingProgress + '%';
-    }
-};
-
-const stoploading = () => {
-  if (loading) {
-    clearInterval(loading);
-    loading = null;
-  }
-};
 
 const handleScroll = () => {
     if (window.scrollY > 100) {
@@ -97,7 +79,6 @@ const enableScrolling = () => {
 
 onMounted(async () => {
     disableScrolling();
-    loading = setInterval(loadingTimer, 1000);
     loaded();
 });
 
@@ -106,7 +87,8 @@ onUnmounted(() => {
 });
 
 const loaded = () => {
-    bar.value.style.width = '100%';
+    bar.value?.classList.remove('loading-bar-animated');
+    bar.value?.classList.add('loading-bar-done');
     setTimeout(async () => {
         loadbar.value?.classList.add('loadbar-hide');
     }, 250);
@@ -123,6 +105,7 @@ const loaded = () => {
             nav.value?.classList.remove('load-hide');
             mobileNav.value?.classList.remove('load-hide');
             window.addEventListener('scroll', handleScroll);
+            //loadbar.value?.classList.add('hide');
         }, 500);
     }, 750);
 };
@@ -269,7 +252,6 @@ const loaded = () => {
 }
 
 .loading-bar {
-    width: 0%;
     background-color: #7f26d3;
     position: absolute;
     top: 0;
@@ -279,6 +261,76 @@ const loaded = () => {
     color: #fff;
     transition: all 0.5s;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    width: 90%;
+}
+
+.loading-bar-animated {
+    width: 0%;
+    animation: loadingAnimation 38s forwards;
+}
+
+@keyframes loadingAnimation {
+    0%, 5% {
+        width: 0%;
+    }
+    5%, 10% {
+        width: 5%;
+    }
+    10%, 15% {
+        width: 10%;
+    }
+    15%, 20% {
+        width: 15%;
+    }
+    20%, 25% {
+        width: 20%;
+    }
+    25%, 30% {
+        width: 25%;
+    }
+    30%, 35% {
+        width: 30%;
+    }
+    35%, 40% {
+        width: 35%;
+    }
+    40%, 45% {
+        width: 40%;
+    }
+    45%, 50% {
+        width: 45%;
+    }
+    50%, 55% {
+        width: 50%;
+    }
+    55%, 60% {
+        width: 55%;
+    }
+    60%, 65% {
+        width: 60%;
+    }
+    65%, 70% {
+        width: 65%;
+    }
+    70%, 75% {
+        width: 70%;
+    }
+    75%, 80% {
+        width: 75%;
+    }
+    80%, 85% {
+        width: 80%;
+    }
+    85%, 90% {
+        width: 85%;
+    }
+    90%, 100% {
+        width: 90%;
+    }
+}
+
+.loading-bar-done {
+    width: 100%;
 }
 
 .navbar {
@@ -302,21 +354,5 @@ const loaded = () => {
 
 .loadbar-hide {
     opacity: 0;
-}
-
-#headerr.header-scrolleddd {
-  width: 60px;   
-}
-
-#headerr {
-  width: 80px;   
-  transition: all 0.5s;  
-}
-
-.header.header-scrolled,
-.header.header-pages {
-  height: 66px;
-  padding: 10px 0;
-    transition: all 0.5s;
 }
 </style>

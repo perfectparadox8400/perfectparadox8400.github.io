@@ -93,7 +93,7 @@
 		loop: true,
 		lazyLoad: true,
 		items: 1,
-		autoplayTimeout: 4000,
+		autoplayTimeout: 5000,
 	});
 })(jQuery);
 
@@ -108,3 +108,18 @@ $(window).load(function () {
 		$(".hover_bkgr_fricc").hide();
 	});
 });
+
+let loading = setInterval(loadingTimer, 1000);
+let loadingProgress = 0;
+
+function loadingTimer() {
+    if (loadingProgress > 90) {
+        if (loading) {
+			clearInterval(loading);
+			loading = null;
+		}
+    } else {
+        loadingProgress += 6.25;
+		document.getElementById('loadbar').style.width = loadingProgress + '%';
+    }
+}

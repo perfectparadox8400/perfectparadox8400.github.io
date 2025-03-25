@@ -4,6 +4,7 @@
 	"menu": [
 		{
 			"title": "Home",
+			"url": "#intro",
 			"subMenu": [
 				{
 					"name": "About Us",
@@ -25,6 +26,7 @@
 		},
 		{
 			"title": "FIRST",
+			"url": false,
 			"subMenu": [
 				{
 					"name": "FIRST ® LEGO® League",
@@ -45,6 +47,7 @@
 		},
 		{
 			"title": "More",
+			"url": false,
 			"subMenu": [
 				{
 					"name": "Old Website",

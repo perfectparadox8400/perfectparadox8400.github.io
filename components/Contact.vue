@@ -46,7 +46,7 @@ const formattedPhoneNumber = (phone) => {
   display: inline-block;
   font-size: 15px;
   text-align: center;
-  padding: 70px;
+  padding: 40px 70px;
 }
 
 .nav a {

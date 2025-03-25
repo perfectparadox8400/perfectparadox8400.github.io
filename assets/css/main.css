@@ -302,35 +302,6 @@ h6 {
   }
 }
 
-/* Back to top button */
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-.back-to-top {
-  position: fixed;
-  display: none;
-  background: #5e068a;
-  color: #fff;
-  width: 44px;
-  height: 44px;
-  text-align: center;
-  line-height: 1;
-  font-size: 16px;
-  border-radius: 50%;
-  right: 15px;
-  bottom: 15px;
-  transition: background 0.5s;
-  z-index: 11;
-}
-
-.back-to-top i {
-  padding-top: 12px;
-  color: #fff;
-}
-
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -366,6 +337,7 @@ body {width: auto!important; overflow-x: hidden!important}
 .main-nav li:hover > a {
   color: #5e068a;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .main-nav .drop-down ul {
@@ -406,8 +378,7 @@ body {width: auto!important; overflow-x: hidden!important}
 }
 
 .main-nav .drop-down > a:after {
-  content: "\f107";
-  font-family: FontAwesome;
+  content: ">";
   padding-left: 10px;
 }
 
