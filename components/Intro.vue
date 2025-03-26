@@ -29,11 +29,11 @@
     background: url("/img/intro-bg.svg") center bottom no-repeat;
     background-size: cover;
     width: 100%;
-    height: 95svh;
+    height: 90svh;
 }
 
 .intro {
-    padding: 160px 0 60px 0;
+    padding: 180px 0 60px 0;
 }
 
 .intro .intro-img {
@@ -106,11 +106,11 @@
 
 @media (max-width: 991px) {
     .intro {
-        padding: 80px 0 60px 0;
+        padding: 60px 0 60px 0;
     }
 
     .intro .intro-img {
-        width: 70%;
+        width: 65%;
         float: none;
         margin: 0 auto 25px auto;
     }
@@ -125,7 +125,7 @@
 
 @media (max-width: 767px) {
     .intro {
-        padding: 180px 0 40px 0;
+        padding: 120px 0 40px 0;
     }
 
     .intro .intro-info {
@@ -140,7 +140,7 @@
 
 @media (max-width: 574px) {
     .intro {
-        padding: 140px 0 20px 0;
+        padding: 120px 0 20px 0;
     }
 }
 </style>

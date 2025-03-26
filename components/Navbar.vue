@@ -20,7 +20,7 @@
                 <nav ref="nav" class="main-nav d-none d-lg-block navbar load-hide">
                     <ul>
                         <li v-for="item in website.menu" :key="item.title || item.name" :class="{ 'drop-down': item.subMenu }">
-                            <a v-bind="item.url === false ? {} : { href: item.url || '#' }">{{ item.title || item.name }}</a>
+                            <a v-bind="item.url === false ? {} : { href: item.url || '#' }">{{ item.title || item.name }} <Icon v-if="item.url === false" name="octicon:chevron-down-12" class="down"/><Icon v-if="item.url === false" name="octicon:chevron-up-12" class="up"/></a>
                             <ul v-if="item.subMenu">
                                 <li v-for="subItem in item.subMenu" :key="subItem.name">
                                     <a :href="subItem.url" :target="subItem.target">{{ subItem.name }}</a>

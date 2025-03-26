@@ -8,15 +8,6 @@
     </div>
 </template>
 <script>
-useHead({
-    script: [
-        { src: 'lib/easing/easing.min.js' },
-        { src: 'lib/waypoints/waypoints.min.js' },
-        { src: 'lib/counterup/counterup.min.js' },
-        { src: 'lib/isotope/isotope.pkgd.min.js' }
-    ],
-});
-
 export default {
     mounted() {
         if ($('.main-nav').length) {

@@ -392,9 +392,16 @@ body.scroll {
   color: #5e068a;
 }
 
-.main-nav .drop-down > a:after {
-  content: ">";
-  padding-left: 10px;
+.main-nav .drop-down > a span {
+  vertical-align: middle;
+}
+
+.main-nav .drop-down > a span.down {
+  display: inline-block;
+}
+
+.main-nav .drop-down > a span.up {
+  display: none;
 }
 
 .main-nav .drop-down .drop-down ul {
@@ -412,8 +419,7 @@ body.scroll {
   padding-right: 35px;
 }
 
-.main-nav .drop-down .drop-down > a:after {
-  content: "\f105";
+.main-nav .drop-down .drop-down > a span{
   position: absolute;
   right: 15px;
 }
@@ -455,16 +461,26 @@ body.scroll {
   text-decoration: none;
 }
 
-.mobile-nav .drop-down > a:after {
-  content: "\f078";
-  font-family: FontAwesome;
+.mobile-nav .drop-down > a span {
   padding-left: 10px;
   position: absolute;
   right: 15px;
 }
 
-.mobile-nav .active.drop-down > a:after {
-  content: "\f077";
+.mobile-nav .drop-down > a span.down {
+  display: inline-block;
+}
+
+.mobile-nav .drop-down > a span.up {
+  display: none;
+}
+
+.mobile-nav .active.drop-down > a span.down {
+  display: none;
+}
+
+.mobile-nav .active.drop-down > a span.up {
+  display: inline-block;
 }
 
 .mobile-nav .drop-down > a {
