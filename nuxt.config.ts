@@ -23,6 +23,8 @@ export default defineNuxtConfig({
     }
   },
   plugins: [
+    '~/plugins/jquery.client.js',
+    '~/plugins/webpack.client.js',
     '~/plugins/title.js'
   ],
   googleFonts: {

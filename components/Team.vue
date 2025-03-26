@@ -8,7 +8,8 @@
                 <div class="col-lg-8">
                     <div class="owl-carousel testimonials-carousel wow fadeInUp">
                         <div v-for="member in team" :key="member.name" class="testimonial-item">
-                            <NuxtImg :src="member.image" class="testimonial-img" :alt="member.name" format="webp" quality="100" :placeholder="[150, 200, 75, 5]" />
+                            <NuxtImg :src="member.image" class="testimonial-img" :alt="member.name" width="120"
+                                height="160" format="webp" quality="100" :placeholder="[120, 160, 75, 5]" />
                             <h3>{{ member.name }}</h3>
                             <h4>{{ member.role }}</h4>
                             <p>{{ member.description }}</p>
@@ -22,6 +23,17 @@
 
 <script setup>
 import team from '../team.json';
+
+onMounted(() => {
+    $(".testimonials-carousel").owlCarousel({
+        autoplay: true,
+        dots: true,
+        loop: true,
+        lazyLoad: true,
+        items: 1,
+        autoplayTimeout: 5000,
+    });
+});
 </script>
 
 <style scoped>

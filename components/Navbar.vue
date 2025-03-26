@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button ref="mobileNav" type="button" class="mobile-nav-toggle d-lg-none navbar-size load-hide"><i class="fa fa-bars"></i></button>
+        <button ref="mobileNav" type="button" class="mobile-nav-toggle d-lg-none navbar-size load-hide"><Icon name="octicon:three-bars" class="bars"/><Icon name="octicon:x-12" class="x hide"/></button>
         <header ref="header" id="header" class="fixed-top header">
             <div class="container" style="height: 100%;">
                 <div ref="loadingBox" class="loading">
@@ -61,26 +61,7 @@ const handleScroll = () => {
     }
 };
 
-const disableScrolling = () => {
-    var x = window.scrollX;
-    var y = window.scrollY;
-    window.onscroll = function () {
-        window.scrollTo(x, y);
-    };
-    document.body.addEventListener('touchmove', function (e) {
-        e.preventDefault();
-    }, { passive: false });
-};
-
-const enableScrolling = () => {
-    window.onscroll = function () { };
-    document.body.removeEventListener('touchmove', function (e) {
-        e.preventDefault();
-    }, { passive: false });
-}
-
 onMounted(async () => {
-    disableScrolling();
     await nextTick();
     setTimeout(async () => {
         loaded();
@@ -106,7 +87,7 @@ const loaded = () => {
             logo.value?.classList.remove('zoom');
             loadingBox.value?.classList.add('loading-done');
             loadingBox.value?.classList.add('logo');
-            enableScrolling();
+            $("body").addClass('scroll');
             setTimeout(() => {
                 title.value?.classList.remove('load-hide');
                 nav.value?.classList.remove('load-hide');
@@ -144,8 +125,7 @@ const loaded = () => {
     position: fixed;
     top: 0;
     left: 0;
-    padding-left: -15px;
-    height: 100svh
+    height: 100%;
 }
 
 .navbar-size {
@@ -162,7 +142,7 @@ const loaded = () => {
     transition: all 1s ease;
     opacity: 1;
     transform: translateY(0);
-    padding-right: 30px;
+    padding-right: 36px;
 }
 
 .title a {
@@ -243,6 +223,22 @@ const loaded = () => {
     .zoom {
         max-height: 30svh;
         max-width: 30svh;
+    }
+}
+
+@media (max-width: 374px) {
+    .logo-box img {
+        max-width: 30svh;
+        max-height: 30svh;
+    }
+
+    .zoom {
+        max-height: 20svh;
+        max-width: 20svh;
+    }
+
+    .title a {
+        font-size: 14px;
     }
 }
 

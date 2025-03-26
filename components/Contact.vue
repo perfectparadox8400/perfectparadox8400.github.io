@@ -33,37 +33,42 @@ const formattedPhoneNumber = (phone) => {
 <style scoped>
 #contact {
     padding: 60px 0;
+    overflow: hidden;
 }
 
 .nav {
-  list-style-type: none;
-  text-align: center;
-  margin: auto;
-  padding: 0;
+    list-style-type: none;
+    text-align: center;
+    margin: auto;
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
 }
 
 .nav li {
-  display: inline-block;
-  font-size: 15px;
-  text-align: center;
-  padding: 40px 70px;
+    display: inline-block;
+    font-size: 15px;
+    text-align: center;
 }
 
 .nav a {
-  color: #092038;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+    color: #092038;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 .nav a:hover {
-  color: #5e068a;
+    color: #5e068a;
 }
 
 .nav span {
-    width: 2em;
-    height: 2em;
+    width: 1.8em;
+    height: 1.8em;
     color: #5e068a;
 }
 </style>

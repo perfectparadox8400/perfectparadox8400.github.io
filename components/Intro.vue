@@ -1,21 +1,23 @@
 <template>
-    <section id="intro" class="clearfix main-pages intro">
-        <div class="container">
-            <div class="intro-img">
-                <NuxtImg :src=website.home.team alt="team" class="img-fluid" format="webp" quality="100" :placeholder="[1920, 1080, 75, 5]" />
-            </div>
-            <div class="intro-info">
-                <h2></h2>
-                <h2></h2>
-                <h2>{{ website.home.title }}<br></h2>
-                <div>
-                    <h5 style="color:white;">{{ website.home.subtitle }}</h5>
-                    <a href="#about" class="btn-get-started scrollto">About</a>
-                    <a href="#contact" class="btn-services scrollto">Contact Us</a>
+    <div class="main-pages background">
+        <section id="intro" class="clearfix intro">
+            <div class="container">
+                <div class="intro-img">
+                    <NuxtImg :src=website.home.team alt="team" class="img-fluid" format="webp" quality="100" :placeholder="[1920, 1080, 75, 5]" />
+                </div>
+                <div class="intro-info">
+                    <h2></h2>
+                    <h2></h2>
+                    <h2>{{ website.home.title }}<br></h2>
+                    <div>
+                        <h5 style="color:white;">{{ website.home.subtitle }}</h5>
+                        <a href="#about" class="btn-get-started scrollto">About</a>
+                        <a href="#contact" class="btn-services scrollto">Contact Us</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 </template>
 
 <script setup>
@@ -23,13 +25,15 @@
 </script>
 
 <style scoped>
-.intro {
-    width: 100%;
-    position: relative;
+.background {
     background: url("/img/intro-bg.svg") center bottom no-repeat;
     background-size: cover;
-    padding: 200px 0;
-    height: 85svh;
+    width: 100%;
+    height: 95svh;
+}
+
+.intro {
+    padding: 160px 0 60px 0;
 }
 
 .intro .intro-img {
@@ -69,7 +73,7 @@
     padding: 10px 32px;
     border-radius: 50px;
     transition: 0.5s;
-    margin: 0 20px 20px 0;
+    margin: 5px 20px 20px 20px;
     color: #fff;
 }
 
@@ -102,17 +106,17 @@
 
 @media (max-width: 991px) {
     .intro {
-        padding: 110px 0 60px 0;
+        padding: 80px 0 60px 0;
     }
 
     .intro .intro-img {
-        width: 80%;
+        width: 70%;
         float: none;
         margin: 0 auto 25px auto;
     }
 
     .intro .intro-info {
-        width: 80%;
+        width: 70%;
         float: none;
         margin: auto;
         text-align: center;

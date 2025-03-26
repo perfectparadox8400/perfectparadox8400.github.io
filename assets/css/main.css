@@ -13,7 +13,6 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  overflow-x: hidden !important;
 }
 
 a {
@@ -79,6 +78,14 @@ h6 {
   }
 }
 
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto
+}
+
 *, ::after, ::before {
   box-sizing: border-box;
 }
@@ -89,7 +96,7 @@ h6 {
 }
 
 .main-pages {
-  margin-top: 60px;
+  padding-top: 80px;
 }
 
 .clearfix::after {
@@ -307,7 +314,15 @@ h6 {
 --------------------------------------------------------------*/
 
 /* Desktop Navigation */
-body {width: auto!important; overflow-x: hidden!important} 
+body {
+  width: auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
+} 
+
+body.scroll {
+  overflow-y: visible;
+}
 
 .main-nav,
 .main-nav * {
@@ -480,8 +495,8 @@ body {width: auto!important; overflow-x: hidden!important}
   text-align: right;
 }
 
-.mobile-nav-toggle i {
-  margin: 0 18px 0 0;
+.mobile-nav-toggle span {
+  margin: 18px;
   color: #5e068a;
 }
 
@@ -505,7 +520,7 @@ body {width: auto!important; overflow-x: hidden!important}
   left: 0;
 }
 
-.mobile-nav-active .mobile-nav-toggle i {
+.mobile-nav-active .mobile-nav-toggle span {
   color: #fff;
 }
 

@@ -4,8 +4,12 @@
 	"menu": [
 		{
 			"title": "Home",
-			"url": "#intro",
+			"url": false,
 			"subMenu": [
+				{
+					"name": "Intro",
+					"url": "#intro"
+				},
 				{
 					"name": "About Us",
 					"url": "#about"

@@ -16,6 +16,7 @@ export default {
     methods: {
         handleScroll() {
             const backToTopButton = this.$refs.backToTopButton;
+            if (!backToTopButton) return;
             if (window.scrollY > 100) {
                 backToTopButton.classList.add("visible");
                 backToTopButton.classList.remove("hidden");
