@@ -5,13 +5,15 @@
             <div class="container" style="height: 100%;">
                 <div ref="loadingBox" class="loading">
                     <div class="logo-box">
-                        <img :src="img(website.logo, { format: 'webp', quality: 100})" ref="logo" class="zoom navbar-size" alt="logo" />
+                        <img :src="website.logo" ref="logo" class="zoom navbar-size" alt="logo" />
                     </div>
                     <div ref="title" class="title load-hide">
                         <a href="/">&nbsp;{{ website.name }}</a>
                     </div>
                     <div ref="loadbar" class="loadbar">
-                        <div ref="bar" class="loading-bar loading-bar-animated">&nbsp;Loading...</div>
+                        <div ref="bar" class="loading-bar loading-bar-animated">&nbsp;</div>
+                        <div ref="barDone" class="loading-bar no-transition">&nbsp;</div>
+                        <div class="loading-bar">&nbsp;Loading...</div>
                         <p>&nbsp;</p>
                     </div>
                 </div>
@@ -34,7 +36,6 @@
 
 <script setup>
 import website from '../website.json';
-const img = useImage();
 
 const nav = ref(null);
 const mobileNav = ref(null);
@@ -43,6 +44,7 @@ const logo = ref(null);
 const title = ref(null);
 const loadbar = ref(null);
 const bar = ref(null);
+const barDone = ref(null);
 const loadingBox = ref(null);
 
 const handleScroll = () => {
@@ -79,7 +81,10 @@ const enableScrolling = () => {
 
 onMounted(async () => {
     disableScrolling();
-    loaded();
+    await nextTick();
+    setTimeout(async () => {
+        loaded();
+    }, 1000);
 });
 
 onUnmounted(() => {
@@ -87,8 +92,9 @@ onUnmounted(() => {
 });
 
 const loaded = () => {
-    bar.value?.classList.remove('loading-bar-animated');
-    bar.value?.classList.add('loading-bar-done');
+    bar.value?.classList.add('loading-bar-done-important');
+    barDone.value.style.width = bar.value.style.width;
+    //barDone.value?.classList.add('loading-bar-done');
     setTimeout(async () => {
         loadbar.value?.classList.add('loadbar-hide');
     }, 250);
@@ -105,7 +111,7 @@ const loaded = () => {
             nav.value?.classList.remove('load-hide');
             mobileNav.value?.classList.remove('load-hide');
             window.addEventListener('scroll', handleScroll);
-            //loadbar.value?.classList.add('hide');
+            loadbar.value?.classList.add('hide');
         }, 500);
     }, 750);
 };
@@ -259,13 +265,12 @@ const loaded = () => {
     z-index: 0;
     border-radius: 5px;
     color: #fff;
-    transition: all 0.5s;
+    transition: width 0.5s;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    width: 90%;
+    width: 0%;
 }
 
 .loading-bar-animated {
-    width: 0%;
     animation: loadingAnimation 38s forwards;
 }
 
@@ -329,8 +334,17 @@ const loaded = () => {
     }
 }
 
+.no-transition {
+    transition: none;
+}
+
 .loading-bar-done {
+    transition: width 0.5s;
     width: 100%;
+}
+
+.loading-bar-done-important {
+    background-color: transparent !important;
 }
 
 .navbar {

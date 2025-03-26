@@ -18,7 +18,6 @@ useHead({
     script: [
         { src: 'lib/jquery/jquery.min.js' },
         { src: 'lib/jquery/jquery-migrate.min.js' },
-        { src: 'js/main.js' },
         { src: 'lib/easing/easing.min.js' },
         { src: 'lib/mobile-nav/mobile-nav.js' },
         { src: 'lib/wow/wow.min.js' },
@@ -26,7 +25,8 @@ useHead({
         { src: 'lib/counterup/counterup.min.js' },
         { src: 'lib/owlcarousel/owl.carousel.min.js' },
         { src: 'lib/isotope/isotope.pkgd.min.js' },
-        { src: 'lib/lightbox/js/lightbox.min.js' }
+        { src: 'lib/lightbox/js/lightbox.min.js' },
+        { src: 'js/main.js' },
     ],
 });
 </script>
