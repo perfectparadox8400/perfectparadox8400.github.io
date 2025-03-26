@@ -92,28 +92,30 @@ onUnmounted(() => {
 });
 
 const loaded = () => {
+    barDone.value.style.width = window.getComputedStyle(bar.value).width;
     bar.value?.classList.add('loading-bar-done-important');
-    barDone.value.style.width = bar.value.style.width;
-    //barDone.value?.classList.add('loading-bar-done');
     setTimeout(async () => {
-        loadbar.value?.classList.add('loadbar-hide');
+        barDone.value?.classList.add('loading-bar-done');
+        setTimeout(async () => {  
+            loadbar.value?.classList.add('loadbar-hide');
+        }, 250);
+        setTimeout(async () => {
+            await nextTick();
+            header.value?.classList.add('navbar-size');
+            nav.value?.classList.remove('hide');
+            logo.value?.classList.remove('zoom');
+            loadingBox.value?.classList.add('loading-done');
+            loadingBox.value?.classList.add('logo');
+            enableScrolling();
+            setTimeout(() => {
+                title.value?.classList.remove('load-hide');
+                nav.value?.classList.remove('load-hide');
+                mobileNav.value?.classList.remove('load-hide');
+                window.addEventListener('scroll', handleScroll);
+                loadbar.value?.classList.add('hide');
+            }, 500);
+        }, 750);
     }, 250);
-    setTimeout(async () => {
-        await nextTick();
-        header.value?.classList.add('navbar-size');
-        nav.value?.classList.remove('hide');
-        logo.value?.classList.remove('zoom');
-        loadingBox.value?.classList.add('loading-done');
-        loadingBox.value?.classList.add('logo');
-        enableScrolling();
-        setTimeout(() => {
-            title.value?.classList.remove('load-hide');
-            nav.value?.classList.remove('load-hide');
-            mobileNav.value?.classList.remove('load-hide');
-            window.addEventListener('scroll', handleScroll);
-            loadbar.value?.classList.add('hide');
-        }, 500);
-    }, 750);
 };
 </script>
 
@@ -340,7 +342,7 @@ const loaded = () => {
 
 .loading-bar-done {
     transition: width 0.5s;
-    width: 100%;
+    width: 100% !important;
 }
 
 .loading-bar-done-important {

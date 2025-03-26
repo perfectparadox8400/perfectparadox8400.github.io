@@ -1,19 +1,6 @@
 (function ($) {
 	"use strict";
 
-	// Back to top button
-	$(window).scroll(function () {
-		if ($(this).scrollTop() > 100) {
-			$(".back-to-top").fadeIn("slow");
-		} else {
-			$(".back-to-top").fadeOut("slow");
-		}
-	});
-	$(".back-to-top").click(function () {
-		$("html, body").animate({ scrollTop: 0 }, 1500, "easeInOutExpo");
-		return false;
-	});
-
 	// Initiate the wowjs animation library
 	new WOW().init();
 
@@ -81,12 +68,6 @@
 		});
 	});
 
-	// jQuery counterUp (used in Why Us section)
-	$('[data-toggle="counter-up"]').counterUp({
-		delay: 10,
-		time: 1000,
-	});
-
 	$(".testimonials-carousel").owlCarousel({
 		autoplay: true,
 		dots: true,
@@ -96,15 +77,3 @@
 		autoplayTimeout: 5000,
 	});
 })(jQuery);
-
-$(window).load(function () {
-	$(".trigger_popup_fricc").click(function () {
-		$(".hover_bkgr_fricc").show();
-	});
-	$(".hover_bkgr_fricc").click(function () {
-		$(".hover_bkgr_fricc").hide();
-	});
-	$(".popupCloseButton").click(function () {
-		$(".hover_bkgr_fricc").hide();
-	});
-});

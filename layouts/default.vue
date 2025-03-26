@@ -26,7 +26,7 @@ useHead({
         { src: 'lib/owlcarousel/owl.carousel.min.js' },
         { src: 'lib/isotope/isotope.pkgd.min.js' },
         { src: 'lib/lightbox/js/lightbox.min.js' },
-        { src: 'js/main.js' },
+        { src: 'js/main.js' }
     ],
 });
 </script>
