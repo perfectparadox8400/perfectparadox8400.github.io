@@ -1,39 +1,37 @@
 <template>
-    <div class="main-pages background">
-        <section id="intro" class="clearfix intro">
-            <div class="container">
-                <div class="intro-img">
-                    <NuxtImg :src=website.home.team alt="team" class="img-fluid" format="webp" quality="100" :placeholder="[1920, 1080, 75, 5]" />
-                </div>
-                <div class="intro-info">
-                    <h2></h2>
-                    <h2></h2>
-                    <h2>{{ website.home.title }}<br></h2>
-                    <div>
-                        <h5 style="color:white;">{{ website.home.subtitle }}</h5>
-                        <a href="#about" class="btn-get-started scrollto">About</a>
-                        <a href="#contact" class="btn-services scrollto">Contact Us</a>
-                    </div>
+    <section id="intro" class="intro clearfix">
+        <div class="container">
+            <div class="intro-img">
+                <NuxtImg :src=website.home.team alt="team" class="img-fluid" format="webp" quality="100"
+                    :placeholder="[1920, 1080, 75, 5]" />
+            </div>
+            <div class="intro-info">
+                <h2>{{ website.home.title }}<br></h2>
+                <div>
+                    <h5 style="color:white;">{{ website.home.subtitle }}</h5>
+                    <a href="#about" class="btn-get-started scrollto">About</a>
+                    <a href="#contact" class="btn-services scrollto">Contact Us</a>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 </template>
 
 <script setup>
-    import website from '../website.json';
+import website from '../website.json';
 </script>
 
 <style scoped>
-.background {
+.intro {
+    margin-top: 60px;
+    padding: 160px 0 120px;
     background: url("/img/intro-bg.svg") center bottom no-repeat;
     background-size: cover;
-    width: 100%;
-    height: 90svh;
-}
-
-.intro {
-    padding: 180px 0 60px 0;
+    width: 100svw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .intro .intro-img {
@@ -104,6 +102,12 @@
     height: auto;
 }
 
+@media (max-width: 1200px) {
+    .intro {
+        padding: 120px 0 90px;
+    }
+}
+
 @media (max-width: 991px) {
     .intro {
         padding: 60px 0 60px 0;
@@ -125,7 +129,7 @@
 
 @media (max-width: 767px) {
     .intro {
-        padding: 120px 0 40px 0;
+        padding: 60px 0 40px 0;
     }
 
     .intro .intro-info {
@@ -140,7 +144,15 @@
 
 @media (max-width: 574px) {
     .intro {
-        padding: 120px 0 20px 0;
+        padding: 60px 0 20px 0;
+    }
+
+    .intro .intro-info {
+        width: 90%;
+    }
+
+    .intro .intro-info h2 {
+        font-size: 28px;
     }
 }
 </style>

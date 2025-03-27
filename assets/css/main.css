@@ -101,10 +101,6 @@ h6 {
   display: none !important;
 }
 
-.main-pages {
-  padding-top: 80px;
-}
-
 .clearfix::after {
   display: block;
   clear: both;
