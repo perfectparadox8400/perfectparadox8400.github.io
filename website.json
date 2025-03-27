@@ -1,0 +1,139 @@
+{
+	"name": "Perfect Paradox 8400",
+	"logo": "/img/logo.png",
+	"menu": [
+		{
+			"title": "Home",
+			"url": false,
+			"subMenu": [
+				{
+					"name": "Intro",
+					"url": "#intro"
+				},
+				{
+					"name": "About Us",
+					"url": "#about"
+				},
+				{
+					"name": "Members",
+					"url": "#team"
+				},
+				{
+					"name": "Contact",
+					"url": "#contact"
+				},
+				{
+					"name": "Sponsors",
+					"url": "#sponsors"
+				}
+			]
+		},
+		{
+			"title": "FIRST",
+			"url": false,
+			"subMenu": [
+				{
+					"name": "FIRST ® LEGO® League",
+					"url": "https://www.firstinspires.org/robotics/fll",
+					"target": "_blank"
+				},
+				{
+					"name": "FIRST ® Tech Challenge",
+					"url": "https://www.firstinspires.org/robotics/ftc",
+					"target": "_blank"
+				},
+				{
+					"name": "FIRST ® Robotics Competition",
+					"url": "https://www.firstinspires.org/robotics/frc",
+					"target": "_blank"
+				}
+			]
+		},
+		{
+			"title": "More",
+			"url": false,
+			"subMenu": [
+				{
+					"name": "Old Website",
+					"url": "https://perfectparadox8400.wixsite.com/mysite",
+					"target": "_blank"
+				}
+			]
+		},
+		{
+			"name": "Contact Us",
+			"url": "#contact"
+		}
+	],
+	"home": {
+		"team": "/img/team.png",
+		"title": "We are Team 8400 Perfect Paradox",
+		"subtitle": "A FTC Team From Cedar City, Utah",
+		"about": "We are Perfect Paradox Team 8400, located in Cedar City, Utah. We are so excited to have been able to learn and grow this season. This year, we have more than doubled our previous numbers byrecruiting 10 new team members. We have impacted over 1,880 people, gained 260+ outreach hours, and 171+ mentor hours. We have also constructed a robot that we are very proud of, and hope to be able to improve it throughout the season."
+	},
+	"contact": {
+		"email": "perfectparadox8400@gmail.com",
+		"phone": "+14355310000",
+		"address": {
+			"name": "Cedar City, UT 84720",
+			"link": "https://maps.app.goo.gl/J6dZQR5fH7GAWq7eA"
+		},
+		"socials": [
+			{
+				"name": "Facebook",
+				"link": "https://www.facebook.com/PerfectParadox8400",
+				"icon": "lineicons:facebook-fill"
+			},
+			{
+				"name": "Instagram",
+				"link": "https://www.instagram.com/perfect_paradox_ftc_team_8400/",
+				"icon": "lineicons:instagram-fill"
+			},
+			{
+				"name": "X",
+				"link": "https://x.com/FTC8400PP",
+				"icon": "lineicons:x"
+			},
+			{
+				"name": "YouTube",
+				"link": "https://www.youtube.com/@PerfectParadoxFTCTeam8400",
+				"icon": "lineicons:youtube"
+			}
+		]
+	},
+	"sponsors": {
+		"title": "Sponsors",
+		"subtitle": "We would like to thank our sponsors for their support!"
+	},
+	"footer": {
+		"updates": {
+			"title": "Get Updates",
+			"subtitle": "Get updates on games and competition details here:",
+			"image": "/img/ftc.png",
+			"link": "https://www.firstinspires.org/robotics/ftc"
+		},
+		"links": [
+			{
+				"name": "Home",
+				"url": "#intro"
+			},
+			{
+				"name": "About Us",
+				"url": "#about"
+			},
+			{
+				"name": "Members",
+				"url": "#team"
+			},
+			{
+				"name": "Contact",
+				"url": "#contact"
+			},
+			{
+				"name": "Sponsors",
+				"url": "#sponsors"
+			}
+		],
+		"copyright": "All Rights Reserved"
+	}
+}
