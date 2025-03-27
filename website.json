@@ -77,10 +77,63 @@
 		"address": {
 			"name": "Cedar City, UT 84720",
 			"link": "https://maps.app.goo.gl/J6dZQR5fH7GAWq7eA"
-		}
+		},
+		"socials": [
+			{
+				"name": "Facebook",
+				"link": "https://www.facebook.com/PerfectParadox8400",
+				"icon": "lineicons:facebook-fill"
+			},
+			{
+				"name": "Instagram",
+				"link": "https://www.instagram.com/perfect_paradox_ftc_team_8400/",
+				"icon": "lineicons:instagram-fill"
+			},
+			{
+				"name": "X",
+				"link": "https://x.com/FTC8400PP",
+				"icon": "lineicons:x"
+			},
+			{
+				"name": "YouTube",
+				"link": "https://www.youtube.com/@PerfectParadoxFTCTeam8400",
+				"icon": "lineicons:youtube"
+			}
+		]
 	},
 	"sponsors": {
 		"title": "Sponsors",
 		"subtitle": "We would like to thank our sponsors for their support!"
+	},
+	"footer": {
+		"updates": {
+			"title": "Get Updates",
+			"subtitle": "Get updates on games and competition details here:",
+			"image": "/img/ftc.png",
+			"link": "https://www.firstinspires.org/robotics/ftc"
+		},
+		"links": [
+			{
+				"name": "Home",
+				"url": "#intro"
+			},
+			{
+				"name": "About Us",
+				"url": "#about"
+			},
+			{
+				"name": "Members",
+				"url": "#team"
+			},
+			{
+				"name": "Contact",
+				"url": "#contact"
+			},
+			{
+				"name": "Sponsors",
+				"url": "#sponsors"
+			}
+		],
+		"copyright": "All Rights Reserved"
 	}
 }

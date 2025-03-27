@@ -5,6 +5,8 @@
     <div>
         <Navbar />
         <slot />
+        <Footer />
+        <Back2Top />
     </div>
 </template>
 <script>
