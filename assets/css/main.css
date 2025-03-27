@@ -78,6 +78,12 @@ h6 {
   }
 }
 
+@media (min-width: 1400px) {
+  .container {
+      max-width:1320px
+  }
+}
+
 .container-fluid {
   width: 100%;
   padding-right: 15px;

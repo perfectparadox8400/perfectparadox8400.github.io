@@ -1,0 +1,125 @@
+[
+    {
+        "title": "Our Partners",
+        "sponsors": [
+            {
+                "name": "Lions Club",
+                "logo": "/img/sponsors/lionsclub.png",
+                "url": "https://cedarlionsclub.org/"
+            },
+            {
+                "name": "SUU Department of Engineering and Technology",
+                "logo": "/img/sponsors/suu.png",
+                "url": "https://www.suu.edu/et/"
+            },
+            {
+                "name": "4-H",
+                "logo": "/img/sponsors/4h.png",
+                "url": "https://extension.usu.edu/4h-and-youth/"
+            }
+        ]
+    },
+    {
+        "title": "Purple Sponsors"
+    },
+    {
+        "title": "Gold Sponsors"
+    },
+    {
+        "title": "Silver Sponsors",
+        "sponsors": [
+            {
+                "name": "Gene Haas Foundation",
+                "logo": "/img/sponsors/genehaasfoundation.png",
+                "url": "https://www.ghaasfoundation.org/"
+            },
+            {
+                "name": "STEM Action Center",
+                "logo": "/img/sponsors/stemactioncenter.png",
+                "url": "https://stem.utah.gov/"
+            },
+            {
+                "name": "Charlotte Pipe & Foundry Company",
+                "logo": "/img/sponsors/charlottepipe&foundrycompany.png",
+                "url": "https://www.charlottepipe.com/"
+            },
+            {
+                "name": "Leavitt Group",
+                "logo": "/img/sponsors/leavittgroup.png",
+                "url": "https://www.leavitt.com/"
+            }
+        ]
+    },
+    {
+        "title": "Bronze Sponsors",
+        "sponsors": [
+            {
+                "name": "BZI Steel",
+                "logo": "/img/sponsors/bzisteel.png",
+                "url": "https://www.bzi.com/"
+            },
+            {
+                "name": "Tom Comstock"
+            }
+        ]
+
+    },
+    {
+        "title": "Mohogany Sponsors",
+        "sponsors": [
+            {
+                "name": "Leon's Alignment",
+                "logo": "/img/sponsors/leonsalignment.png",
+                "url": "https://www.leonsalignments.com/"
+            },
+            {
+                "name": "Mountain West Computers",
+                "logo": "/img/sponsors/mountainwestcomputers.png",
+                "url": "https://mountainwestcomputers.com/"
+            },
+            {
+                "name": "Bulloch Drug",
+                "logo": "/img/sponsors/bullochdrug.png",
+                "url": "https://bullochdrug.com/"
+            },
+            {
+                "name": "Noggin Games",
+                "logo": "/img/sponsors/noggingames.png",
+                "url": "https://www.facebook.com/NogginGames/"
+            },
+            {
+                "name": "Suriyanarayanan Ramesh"
+            },
+            {
+                "name": "Mitthan Meena"
+            },
+            {
+                "name": "Southern Utah Vision Care",
+                "logo": "/img/sponsors/southernutahvisioncare.png",
+                "url": "https://www.southernutahvisioncare.com/"
+            },
+            {
+                "name": "Balamurugan Balasubramanian"
+            },
+            {
+                "name": "Natural Grocers",
+                "logo": "/img/sponsors/naturalgrocers.png",
+                "url": "https://www.naturalgrocers.com/"
+            },
+            {
+                "name": "K. Rajagopalan"
+            },
+            {
+                "name": "Betty Frazier"
+            },
+            {
+                "name": "Iron County Fair",
+                "logo": "/img/sponsors/ironcountyfair.png",
+                "url": "https://www.ironcountyfair.net/"
+            },
+            {
+                "name": "J. Amos Bishop"
+            }
+        ]
+    }
+]
