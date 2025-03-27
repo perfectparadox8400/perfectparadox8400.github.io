@@ -4,16 +4,14 @@
             <div class="section-header">
                 <h3>Team Members</h3>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="owl-carousel testimonials-carousel wow fadeInUp">
-                        <div v-for="member in team" :key="member.name" class="testimonial-item">
-                            <NuxtImg :src="member.image" class="testimonial-img" :alt="member.name" width="120"
-                                height="160" format="webp" quality="100" :placeholder="[120, 160, 75, 5]" />
-                            <h3>{{ member.name }}</h3>
-                            <h4>{{ member.role }}</h4>
-                            <p>{{ member.description }}</p>
-                        </div>
+            <div class="team-box">
+                <div class="owl-carousel testimonials-carousel wow fadeInUp">
+                    <div v-for="member in team" :key="member.name" class="testimonial-item">
+                        <NuxtImg :src="member.image" class="testimonial-img" :alt="member.name" width="120" height="160"
+                            format="webp" quality="100" :placeholder="[120, 160, 75, 5]" />
+                        <h3>{{ member.name }}</h3>
+                        <h4>{{ member.role }}</h4>
+                        <p>{{ member.description }}</p>
                     </div>
                 </div>
             </div>
@@ -41,6 +39,11 @@ onMounted(() => {
     padding: 60px 0;
     box-shadow: inset 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
     background: #ededed;
+}
+
+.team-box {
+    margin: auto;
+    max-width: 1140px;
 }
 
 .team .section-header {
