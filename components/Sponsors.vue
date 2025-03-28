@@ -6,7 +6,7 @@
 				<p>{{ website.sponsors.subtitle }}</p>
 			</div>
 			<div v-for="(group, groupIndex) in sponsors" :key="groupIndex" class="sponsor-group">
-				<div class="section-header wow fadeInUp" v-if="group.sponsors">
+				<div class="section-header wow fadeInUp">
 					<h4>{{ group.title }}</h4>
 				</div>
 
@@ -18,6 +18,7 @@
 						</a>
 					</div>
 				</div>
+				<h5 v-else>{{ website.sponsors.nosponsor }}<br>Email us at: <a :href="'mailto:' + website.contact.email">{{ website.contact.email }}</a></h5>
 			</div>
 		</div>
 	</section>
@@ -83,7 +84,6 @@ import { NuxtImg } from '#components';
 }
 
 .sponsors img {
-	width: 100%;
 	height: 100%;
 	object-fit: contain;
 	aspect-ratio: attr(width) / attr(height);
@@ -96,5 +96,16 @@ h4 {
 	font-weight: 500;
 	color: #5e068a;
 	text-align: center;
+}
+
+h5 {
+	font-size: 1em;
+	font-weight: 500;
+	text-align: center;
+	margin-top: 20px;
+}
+
+h5 a:hover {
+	text-shadow: 0 0 5px #5e068a;
 }
 </style>

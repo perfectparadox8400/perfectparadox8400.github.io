@@ -3,10 +3,10 @@
 </style>
 <template>
     <div>
-        <Navbar />
-        <slot />
-        <Footer />
-        <Back2Top />
+        <Navbar/>
+        <slot/>
+        <Footer/>
+        <Back2Top/>
     </div>
 </template>
 <script>
@@ -87,8 +87,6 @@ export default {
                 }
             }
         });
-
-
 
         $(window).on("scroll", function () {
             scrollHighlight();

@@ -54,8 +54,8 @@
 			"url": false,
 			"subMenu": [
 				{
-					"name": "Old Website",
-					"url": "https://perfectparadox8400.wixsite.com/mysite",
+					"name": "Readme",
+					"url": "https://www.youtube.com/watch?v=uHgt8giw1LY",
 					"target": "_blank"
 				}
 			]
@@ -73,12 +73,17 @@
 	},
 	"contact": {
 		"email": "perfectparadox8400@gmail.com",
-		"phone": "+14355310000",
+		"phone": "+14352672246",
 		"address": {
 			"name": "Cedar City, UT 84720",
 			"link": "https://maps.app.goo.gl/J6dZQR5fH7GAWq7eA"
 		},
 		"socials": [
+			{
+				"name": "Github",
+				"link": "https://github.com/PerfectParadox8400",
+				"icon": "lineicons:github"
+			},
 			{
 				"name": "Facebook",
 				"link": "https://www.facebook.com/PerfectParadox8400",
@@ -103,7 +108,8 @@
 	},
 	"sponsors": {
 		"title": "Sponsors",
-		"subtitle": "We would like to thank our sponsors for their support!"
+		"subtitle": "We would like to thank our sponsors for their support!",
+		"nosponsor": "Be the first to sponsor us!"
 	},
 	"footer": {
 		"updates": {
