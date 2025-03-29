@@ -67,8 +67,8 @@ const formattedPhoneNumber = (phone) => {
 }
 
 .nav span {
-    width: 1.8em;
-    height: 1.8em;
+    width: 1.75em;
+    height: 1.75em;
     color: #5e068a;
 }
 </style>

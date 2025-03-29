@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['@nuxt/content', 'nuxt-config-schema', '@nuxt/icon', '@nuxtjs/google-fonts', '@nuxt/image'],
+  modules: ['@nuxt/content', 'nuxt-config-schema', '@nuxt/icon', '@nuxtjs/google-fonts', '@nuxt/image', '@nuxtjs/color-mode'],
   app: {
     head: {
       htmlAttrs: {
@@ -32,5 +32,9 @@ export default defineNuxtConfig({
       'Open+Sans': [300, 400, 500, 700],
       'Montserrat': [300, 400, 500, 700],
     }
+  },
+  colorMode: {
+    preference: 'dark',
+    fallback: 'dark'
   }
 })

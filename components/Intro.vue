@@ -51,7 +51,7 @@ import website from '../website.json';
 
 .intro .intro-info h2 {
     color: #fff;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     font-size: 48px;
     font-weight: 700;
 }
@@ -59,6 +59,13 @@ import website from '../website.json';
 .intro .intro-info h2 span {
     color: #74b5fc;
     text-decoration: underline;
+}
+
+.intro .intro-info h5 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 40px;
 }
 
 .intro .intro-info .btn-get-started,

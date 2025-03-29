@@ -27,6 +27,9 @@
                                 </li>
                             </ul>
                         </li>
+                        <li>
+                            <Icon class="color-picker" :name="colorTheme" @click="changeColor"/>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -46,6 +49,13 @@ const loadbar = ref(null);
 const bar = ref(null);
 const barDone = ref(null);
 const loadingBox = ref(null);
+const colorMode = useColorMode();
+const colorTheme = ref(colorMode.preference === 'dark' ? "line-md:moon-loop" : "line-md:sunny-loop");
+
+const changeColor = () => {
+    colorMode.preference = colorMode.preference === 'dark' ? 'light' : 'dark';
+    colorTheme.value = colorMode.preference === 'dark' ? "line-md:moon-loop" : "line-md:sunny-loop";
+};
 
 const handleScroll = () => {
     if (window.scrollY > 100) {

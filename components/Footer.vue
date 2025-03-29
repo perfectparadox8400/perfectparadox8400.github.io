@@ -78,6 +78,7 @@ const dateYear = () => {
 
 .footer .footer-top .footer-info {
   margin-bottom: 30px;
+  padding-right: 25px;
 }
 
 .footer .footer-top .footer-info h3 {

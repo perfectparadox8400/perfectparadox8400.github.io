@@ -1437,6 +1437,18 @@ body.scroll {
   cursor: pointer;
 }
 
+.main-nav span.color-picker {
+  margin: 10px 15px;
+  width: 1.25em;
+  height: 1.25em;
+  min-width: 1.25em;
+  cursor: pointer;
+}
+
+.main-nav span.color-picker:hover {
+  color: #5e068a;
+}
+
 .main-nav .drop-down ul {
   display: block;
   position: absolute;
@@ -1715,5 +1727,26 @@ body.scroll {
   #testimonials .testimonial-item h4,
   #testimonials .testimonial-item p {
     margin-left: 0;
+  }
+}
+
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #5e068a;
+  border-radius: 0.7rem;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 0.7rem;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  html {
+      scrollbar-width: thin;
+      scrollbar-color: #5e068a transparent;
   }
 }

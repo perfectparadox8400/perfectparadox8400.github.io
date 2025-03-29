@@ -18,7 +18,7 @@
 						</a>
 					</div>
 				</div>
-				<h5 v-else>{{ website.sponsors.nosponsor }}<br>Email us at: <a :href="'mailto:' + website.contact.email">{{ website.contact.email }}</a></h5>
+				<h5 v-else class="wow fadeInUp">{{ website.sponsors.nosponsor }}<br>Email us at: <a :href="'mailto:' + website.contact.email">{{ website.contact.email }}</a></h5>
 			</div>
 		</div>
 	</section>

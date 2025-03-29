@@ -4,8 +4,8 @@
             <div class="section-header">
                 <h3>Team Members</h3>
             </div>
-            <div class="team-box">
-                <div class="owl-carousel testimonials-carousel wow fadeInUp">
+            <div class="team-box wow fadeInUp">
+                <div class="owl-carousel testimonials-carousel">
                     <div v-for="member in team" :key="member.name" class="testimonial-item">
                         <NuxtImg :src="member.image" class="testimonial-img" :alt="member.name" width="120" height="160"
                             format="webp" quality="100" :placeholder="[120, 160, 75, 5]" />
