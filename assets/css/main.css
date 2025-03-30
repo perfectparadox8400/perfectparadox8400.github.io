@@ -15,10 +15,19 @@ body {
   line-height: 1.5;
 }
 
+.dark-mode {
+  background: #000;
+  color: #fff;
+}
+
 a {
   color: #5e068a;
   transition: 0.5s;
   text-decoration: none;
+}
+
+.dark-mode a {
+  color: #7f26d3;
 }
 
 a:hover,
@@ -27,6 +36,12 @@ a:focus {
   color: #5e068a;
   outline: none;
   text-decoration: none;
+}
+
+.dark-mode a:hover,
+.dark-mode a:active,
+.dark-mode a:focus {
+  color: #D16DFD;
 }
 
 p {
@@ -1429,6 +1444,10 @@ body.scroll {
   font-weight: 500;
 }
 
+.dark-mode .main-nav a {
+  color: #fff;
+}
+
 .main-nav a:hover,
 .main-nav .active > a,
 .main-nav li:hover > a {
@@ -1437,16 +1456,31 @@ body.scroll {
   cursor: pointer;
 }
 
+.dark-mode .main-nav a:hover,
+.dark-mode .main-nav .active > a,
+.dark-mode .main-nav li:hover > a {
+  color: #D16DFD;
+}
+
 .main-nav span.color-picker {
   margin: 10px 15px;
   width: 1.25em;
   height: 1.25em;
   min-width: 1.25em;
   cursor: pointer;
+  color: inherit;
+}
+
+.dark-mode .main-nav span.color-picker {
+  color: #fff;
 }
 
 .main-nav span.color-picker:hover {
   color: #5e068a;
+}
+
+.dark-mode .main-nav span.color-picker:hover {
+  color: #D16DFD;
 }
 
 .main-nav .drop-down ul {
@@ -1463,6 +1497,10 @@ body.scroll {
   transition: ease all 0.3s;
 }
 
+.dark-mode .main-nav .drop-down ul {
+  background: #000;
+}
+
 .main-nav .drop-down:hover > ul {
   opacity: 1;
   top: 100%;
@@ -1477,13 +1515,23 @@ body.scroll {
 .main-nav .drop-down ul a {
   padding: 10px 20px;
   font-size: 13px;
-  color: #004289;
+  color: #700089;
+}
+
+.dark-mode .main-nav .drop-down ul a {
+  color: #fff;
 }
 
 .main-nav .drop-down ul a:hover,
 .main-nav .drop-down ul .active > a,
 .main-nav .drop-down ul li:hover > a {
   color: #5e068a;
+}
+
+.dark-mode .main-nav .drop-down ul a:hover,
+.dark-mode .main-nav .drop-down ul .active > a,
+.dark-mode .main-nav .drop-down ul li:hover > a {
+  color: #D16DFD;
 }
 
 .main-nav .drop-down > a span {
@@ -1548,6 +1596,14 @@ body.scroll {
   font-weight: 500;
 }
 
+.mobile-nav span.color-picker {
+  margin: 10px 20px;
+  color: #fff;
+  width: 1.25em;
+  height: 1.25em;
+  min-width: 1.25em;
+}
+
 .mobile-nav a:hover,
 .mobile-nav .active > a,
 .mobile-nav li:hover > a {
@@ -1610,6 +1666,10 @@ body.scroll {
   color: #5e068a;
 }
 
+.dark-mode .mobile-nav-toggle span {
+  color: #D16DFD;
+}
+
 .mobile-nav-overly {
   width: 100%;
   height: 100%;
@@ -1634,6 +1694,8 @@ body.scroll {
   color: #fff;
 }
 
+
+
 /*--------------------------------------------------------------
 # Sections
 --------------------------------------------------------------*/
@@ -1643,10 +1705,14 @@ body.scroll {
 
 .section-header h3 {
   font-size: 36px;
-  color: #283d50;
+  color: 432850;
   text-align: center;
   font-weight: 500;
   position: relative;
+}
+
+.dark-mode .section-header h3 {
+  color: #fff;
 }
 
 .section-header p {
@@ -1654,8 +1720,12 @@ body.scroll {
   margin: auto;
   font-size: 15px;
   padding-bottom: 60px;
-  color: #556877;
+  color: #685577;
   width: 50%;
+}
+
+.dark-mode .section-header p {
+  color: #fff;
 }
 
 /* Section with background
@@ -1663,6 +1733,10 @@ body.scroll {
 
 .section-bg {
   background: #ecf5ff;
+}
+
+.dark-mode .section-bg {
+  background: #000;
 }
 
 /* Team Section
@@ -1685,6 +1759,10 @@ body.scroll {
 
 .team .owl-dot.active {
   background-color: #9065ad !important;
+}
+
+.dark-mode .team .owl-dot.active {
+  background-color: #7f26d3 !important;
 }
 
 /*--------------------------------------------------------------
@@ -1739,6 +1817,10 @@ body::-webkit-scrollbar-thumb {
   border-radius: 0.7rem;
 }
 
+.dark-mode body::-webkit-scrollbar-thumb {
+  background-color: #7f26d3;
+}
+
 body::-webkit-scrollbar-track {
   background-color: transparent;
   border-radius: 0.7rem;
@@ -1746,7 +1828,10 @@ body::-webkit-scrollbar-track {
 
 @supports not selector(::-webkit-scrollbar) {
   html {
-      scrollbar-width: thin;
-      scrollbar-color: #5e068a transparent;
+    scrollbar-width: thin;
+    scrollbar-color: #5e068a transparent;
+  }
+  .dark-mode html {
+    scrollbar-color: #7f26d3 transparent;
   }
 }

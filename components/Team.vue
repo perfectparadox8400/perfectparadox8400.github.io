@@ -41,6 +41,10 @@ onMounted(() => {
     background: #ededed;
 }
 
+.dark-mode .team {
+    background: #111111;
+}
+
 .team-box {
     margin: auto;
     max-width: 1140px;
@@ -65,6 +69,10 @@ onMounted(() => {
     margin-left: 140px;
 }
 
+.dark-mode .team .testimonial-item h3 {
+    color: #fff;
+}
+
 .team .testimonial-item h4 {
     font-size: 14px;
     color: #999;
@@ -72,8 +80,16 @@ onMounted(() => {
     margin-left: 140px;
 }
 
+.dark-mode .team .testimonial-item h4 {
+    color: #ccc;
+}
+
 .team .testimonial-item p {
     font-style: italic;
     margin: 0 0 15px 140px;
+}
+
+.dark-mode .team .testimonial-item p {
+    color: #bbb;
 }
 </style>

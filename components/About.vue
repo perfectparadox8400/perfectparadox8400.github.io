@@ -21,6 +21,10 @@ import website from '../website.json';
   padding: 60px 0;
 }
 
+.dark-mode #about {
+  background: #000;
+}
+
 #about .about-container .background {
   margin: 20px 0;
 }
@@ -33,6 +37,10 @@ import website from '../website.json';
   color: #333;
   font-weight: 700;
   font-size: 32px;
+}
+
+.dark-mode #about .about-container .title {
+  color: #fff;
 }
 
 #about .about-container p {
@@ -73,17 +81,7 @@ import website from '../website.json';
   flex-direction: column;
   text-align: center;
   border-radius: 50%;
-  border: 2px solid #007bff;
   transition: all 0.3s ease-in-out;
-}
-
-#about .about-container .icon-box .icon i {
-  color: #007bff;
-  font-size: 24px;
-}
-
-#about .about-container .icon-box:hover .icon {
-  background: #007bff;
 }
 
 #about .about-container .icon-box:hover .icon i {
@@ -98,7 +96,11 @@ import website from '../website.json';
 }
 
 #about .about-container .icon-box .title a {
-  color: #283d50;
+  color: #432850;
+}
+
+.dark-mode #about .about-container .icon-box .title a {
+  color: #fff;
 }
 
 #about .about-container .icon-box .description {

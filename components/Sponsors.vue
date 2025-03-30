@@ -1,5 +1,5 @@
 <template>
-	<section id="sponsors" class="section-bg sponsors">
+	<section id="sponsors" class="sponsors">
 		<div class="container">
 			<div class="section-header">
 				<h3>{{ website.sponsors.title }}</h3>
@@ -37,6 +37,10 @@ import { NuxtImg } from '#components';
 	background: #ededed;
 }
 
+.dark-mode .sponsors {
+	background: #111111;
+}
+
 .sponsors .section-header p {
 	padding-bottom: 25px;
 }
@@ -54,16 +58,25 @@ import { NuxtImg } from '#components';
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: 1px solid #dec6f5;
+	border: 1px solid #D16DFD;
 	overflow: hidden;
 	background: #fff;
 	height: 180px;
 	width: 300px;
 }
 
+.dark-mode .sponsors .client-logo {
+	background: #000;
+}
+
 .sponsors .client-logo img {
 	transform: scale(0.8);
 	transition: all 0.4s ease-in-out;
+}
+
+.dark-mode .sponsors .client-logo img {
+	-webkit-filter: drop-shadow(0 0 3px #ffffff);
+  filter: drop-shadow(0 0 3px #ffffff);
 }
 
 .sponsors .client-logo:hover img {
@@ -98,6 +111,10 @@ h4 {
 	text-align: center;
 }
 
+.dark-mode h4 {
+	color: #7f26d3;
+}
+
 h5 {
 	font-size: 1em;
 	font-weight: 500;
@@ -105,7 +122,17 @@ h5 {
 	margin-top: 20px;
 }
 
+.dark-mode h5 {
+	color: #fff;
+}
+
 h5 a:hover {
 	text-shadow: 0 0 5px #5e068a;
+}
+
+.client-logo a:hover,
+.client-logo a:active,
+.client-logo a:focus {
+	color: #7f26d3;
 }
 </style>

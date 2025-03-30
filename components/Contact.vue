@@ -36,6 +36,10 @@ const formattedPhoneNumber = (phone) => {
     overflow: hidden;
 }
 
+.dark-mode #contact {
+    background: #000;
+}
+
 .nav {
     list-style-type: none;
     text-align: center;
@@ -55,20 +59,32 @@ const formattedPhoneNumber = (phone) => {
 }
 
 .nav a {
-    color: #092038;
+    color: #432850;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
 }
 
+.dark-mode .nav a {
+    color: #fff;
+}
+
 .nav a:hover {
     color: #5e068a;
+}
+
+.dark-mode .nav a:hover {
+    color: #D16DFD;
 }
 
 .nav span {
     width: 1.75em;
     height: 1.75em;
     color: #5e068a;
+}
+
+.dark-mode .nav span {
+    color: #D16DFD;
 }
 </style>

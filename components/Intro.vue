@@ -34,6 +34,10 @@ import website from '../website.json';
     align-items: center;
 }
 
+.dark-mode .intro {
+    background-color: #000;
+}
+
 .intro .intro-img {
     width: 50%;
     float: right;
@@ -54,11 +58,6 @@ import website from '../website.json';
     margin-bottom: 60px;
     font-size: 48px;
     font-weight: 700;
-}
-
-.intro .intro-info h2 span {
-    color: #74b5fc;
-    text-decoration: underline;
 }
 
 .intro .intro-info h5 {

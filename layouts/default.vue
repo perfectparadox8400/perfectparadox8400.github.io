@@ -13,11 +13,6 @@
 export default {
     mounted() {
         if ($('.main-nav').length) {
-            var $mobile_nav = $('.main-nav').clone().prop({
-                class: 'mobile-nav d-lg-none'
-            });
-            $('body').append($mobile_nav);
-            $('body').append('<div class="mobile-nav-overly"></div>');
 
             $(document).on('click', '.mobile-nav-toggle', function (e) {
                 $('body').toggleClass('mobile-nav-active');

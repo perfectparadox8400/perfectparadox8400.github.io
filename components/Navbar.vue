@@ -1,6 +1,9 @@
 <template>
     <div>
-        <button ref="mobileNav" type="button" class="mobile-nav-toggle d-lg-none navbar-size load-hide"><Icon name="octicon:three-bars" class="bars"/><Icon name="octicon:x-12" class="x hide"/></button>
+        <button ref="mobileNav" type="button" class="mobile-nav-toggle d-lg-none navbar-size load-hide">
+            <Icon name="octicon:three-bars" class="bars" />
+            <Icon name="octicon:x-12" class="x hide" />
+        </button>
         <header ref="header" id="header" class="fixed-top header">
             <div class="container" style="height: 100%;">
                 <div ref="loadingBox" class="loading">
@@ -19,21 +22,41 @@
                 </div>
                 <nav ref="nav" class="main-nav d-none d-lg-block navbar load-hide">
                     <ul>
-                        <li v-for="item in website.menu" :key="item.title || item.name" :class="{ 'drop-down': item.subMenu }">
-                            <a v-bind="item.url === false ? {} : { href: item.url || '#' }">{{ item.title || item.name }} <Icon v-if="item.url === false" name="octicon:chevron-down-12" class="down"/><Icon v-if="item.url === false" name="octicon:chevron-up-12" class="up"/></a>
+                        <li v-for="item in website.menu" :key="item.title || item.name"
+                            :class="{ 'drop-down': item.subMenu }">
+                            <a v-bind="item.url === false ? {} : { href: item.url || '#' }">{{ item.title || item.name
+                                }}
+                                <Icon v-if="item.url === false" name="octicon:chevron-down-12" class="down" />
+                                <Icon v-if="item.url === false" name="octicon:chevron-up-12" class="up" />
+                            </a>
                             <ul v-if="item.subMenu">
                                 <li v-for="subItem in item.subMenu" :key="subItem.name">
                                     <a :href="subItem.url" :target="subItem.target">{{ subItem.name }}</a>
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            <Icon class="color-picker" :name="colorTheme" @click="changeColor"/>
-                        </li>
+                        <Icon class="color-picker" :name="colorTheme" @click="changeColor" />
                     </ul>
                 </nav>
             </div>
         </header>
+        <div class="mobile-nav-overly"></div>
+        <nav class="mobile-nav d-lg-none">
+            <ul>
+                <li v-for="item in website.menu" :key="item.title || item.name" :class="{ 'drop-down': item.subMenu }">
+                    <a v-bind="item.url === false ? {} : { href: item.url || '#' }">{{ item.title || item.name }}
+                        <Icon v-if="item.url === false" name="octicon:chevron-down-12" class="down" />
+                        <Icon v-if="item.url === false" name="octicon:chevron-up-12" class="up" />
+                    </a>
+                    <ul v-if="item.subMenu">
+                        <li v-for="subItem in item.subMenu" :key="subItem.name">
+                            <a :href="subItem.url" :target="subItem.target">{{ subItem.name }}</a>
+                        </li>
+                    </ul>
+                </li>
+                <Icon class="color-picker" :name="colorTheme" @click="changeColor" />
+            </ul>
+        </nav>
     </div>
 </template>
 
@@ -50,11 +73,20 @@ const bar = ref(null);
 const barDone = ref(null);
 const loadingBox = ref(null);
 const colorMode = useColorMode();
-const colorTheme = ref(colorMode.preference === 'dark' ? "line-md:moon-loop" : "line-md:sunny-loop");
+const colorTheme = ref("line-md:sunny-loop");
+
+const getIconName = () => {
+    return colorMode.value === 'dark' ? "line-md:moon-loop" : "line-md:sunny-loop";
+}
 
 const changeColor = () => {
-    colorMode.preference = colorMode.preference === 'dark' ? 'light' : 'dark';
-    colorTheme.value = colorMode.preference === 'dark' ? "line-md:moon-loop" : "line-md:sunny-loop";
+    if (colorMode.value === 'light') {
+        colorMode.preference = 'dark';
+        colorTheme.value = "line-md:moon-loop";
+    } else {
+        colorMode.preference = 'light';
+        colorTheme.value = "line-md:sunny-loop";
+    }
 };
 
 const handleScroll = () => {
@@ -72,6 +104,7 @@ const handleScroll = () => {
 };
 
 onMounted(async () => {
+    colorTheme.value = getIconName();
     await nextTick();
     setTimeout(async () => {
         loaded();
@@ -82,12 +115,16 @@ onUnmounted(() => {
     window.removeEventListener('scroll', handleScroll);
 });
 
+watch(() => colorMode.preference, (newMode) => {
+  console.log('Color mode changed:', newMode)
+})
+
 const loaded = () => {
     barDone.value.style.width = window.getComputedStyle(bar.value).width;
     bar.value?.classList.add('loading-bar-done-important');
     setTimeout(async () => {
         barDone.value?.classList.add('loading-bar-done');
-        setTimeout(async () => {  
+        setTimeout(async () => {
             loadbar.value?.classList.add('loadbar-hide');
         }, 250);
         setTimeout(async () => {
@@ -128,7 +165,7 @@ const loaded = () => {
 .header {
     width: 100%;
     z-index: 997;
-    transition: all 1s;
+    transition: height 1s;
     padding: 0;
     background: #fff;
     box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
@@ -136,6 +173,11 @@ const loaded = () => {
     top: 0;
     left: 0;
     height: 100%;
+}
+
+.dark-mode .header {
+    background: #000;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-size {
@@ -164,6 +206,10 @@ const loaded = () => {
     text-transform: uppercase;
     color: #5e068a;
     font-family: "Montserrat", sans-serif;
+}
+
+.dark-mode .title a {
+    color: #D16DFD;
 }
 
 .loading {
@@ -261,6 +307,10 @@ const loaded = () => {
     opacity: 1;
 }
 
+.dark-mode .loadbar {
+    background-color: #2a2a2a;
+}
+
 .loadbar p {
     margin: 0;
 }
@@ -283,61 +333,99 @@ const loaded = () => {
 }
 
 @keyframes loadingAnimation {
-    0%, 5% {
+
+    0%,
+    5% {
         width: 0%;
     }
-    5%, 10% {
+
+    5%,
+    10% {
         width: 5%;
     }
-    10%, 15% {
+
+    10%,
+    15% {
         width: 10%;
     }
-    15%, 20% {
+
+    15%,
+    20% {
         width: 15%;
     }
-    20%, 25% {
+
+    20%,
+    25% {
         width: 20%;
     }
-    25%, 30% {
+
+    25%,
+    30% {
         width: 25%;
     }
-    30%, 35% {
+
+    30%,
+    35% {
         width: 30%;
     }
-    35%, 40% {
+
+    35%,
+    40% {
         width: 35%;
     }
-    40%, 45% {
+
+    40%,
+    45% {
         width: 40%;
     }
-    45%, 50% {
+
+    45%,
+    50% {
         width: 45%;
     }
-    50%, 55% {
+
+    50%,
+    55% {
         width: 50%;
     }
-    55%, 60% {
+
+    55%,
+    60% {
         width: 55%;
     }
-    60%, 65% {
+
+    60%,
+    65% {
         width: 60%;
     }
-    65%, 70% {
+
+    65%,
+    70% {
         width: 65%;
     }
-    70%, 75% {
+
+    70%,
+    75% {
         width: 70%;
     }
-    75%, 80% {
+
+    75%,
+    80% {
         width: 75%;
     }
-    80%, 85% {
+
+    80%,
+    85% {
         width: 80%;
     }
-    85%, 90% {
+
+    85%,
+    90% {
         width: 85%;
     }
-    90%, 100% {
+
+    90%,
+    100% {
         width: 90%;
     }
 }
