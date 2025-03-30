@@ -76,13 +76,16 @@ const colorMode = useColorMode();
 const colorTheme = ref("line-md:sunny-loop");
 
 const getIconName = () => {
-    return colorMode.value === 'dark' ? "line-md:moon-loop" : "line-md:sunny-loop";
+    return colorMode.preference === 'dark' ? "line-md:moon-loop" : colorMode.preference === 'light' ? "line-md:sunny-loop" : "line-md:monitor";
 }
 
 const changeColor = () => {
-    if (colorMode.value === 'light') {
+    if (colorMode.preference === 'light') {
         colorMode.preference = 'dark';
         colorTheme.value = "line-md:moon-loop";
+    } else if (colorMode.preference === 'dark') {
+        colorMode.preference = 'system';
+        colorTheme.value = "line-md:monitor";
     } else {
         colorMode.preference = 'light';
         colorTheme.value = "line-md:sunny-loop";
@@ -114,10 +117,6 @@ onMounted(async () => {
 onUnmounted(() => {
     window.removeEventListener('scroll', handleScroll);
 });
-
-watch(() => colorMode.preference, (newMode) => {
-  console.log('Color mode changed:', newMode)
-})
 
 const loaded = () => {
     barDone.value.style.width = window.getComputedStyle(bar.value).width;

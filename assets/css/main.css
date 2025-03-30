@@ -1463,10 +1463,10 @@ body.scroll {
 }
 
 .main-nav span.color-picker {
-  margin: 10px 15px;
-  width: 1.25em;
-  height: 1.25em;
-  min-width: 1.25em;
+  margin: 11.5px 15px;
+  width: 1em;
+  height: 1em;
+  min-width: 1em;
   cursor: pointer;
   color: inherit;
 }
