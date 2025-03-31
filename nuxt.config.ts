@@ -1,4 +1,5 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import website from './website.json'
+
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
@@ -13,11 +14,13 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/ico', href: '/favicon.ico' }],
       meta: [
         { property: 'og:type', content: 'website' },
-        { property: 'og:title', content: 'Perfect Paradox 8400' },
-        { property: 'og:description', content: 'We are Perfect Paradox Team 8400, located in Cedar City, Utah. We are so excited to have been able to learn and grow this season.' },
-        { property: 'og:url', content: 'https://perfectparadox8400.github.io/' },
-        { property: 'og:image', content: 'https://perfectparadox8400.github.io/img/logo.png' },
-        { name: 'description', content: 'We are Perfect Paradox Team 8400, located in Cedar City, Utah. We are so excited to have been able to learn and grow this season.' },
+        { property: 'og:title', content: website.name },
+        { property: 'og:description', content: website.home.about },
+        { property: 'og:url', content: website.url },
+        { property: 'og:image', content: website.url + website.logo },
+        { name: 'description', content: website.home.about },
+        { name: 'theme-color', media: "(prefers-color-scheme: light)", content: website.color.dark },
+        { name: 'theme-color', media: "(prefers-color-scheme: dark)", content: website.color.light },
         { name: 'google-site-verification', content: '9QTLBPXGjj5_HLEndvFMxztp68JC6frZUewShOcw0NU'}
       ]
     }

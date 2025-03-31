@@ -1,6 +1,11 @@
 {
 	"name": "Perfect Paradox 8400",
+	"url": "https://perfectparadox8400.github.io",
 	"logo": "/img/logo.png",
+	"color": {
+		"light": "#700089",
+		"dark": "#5e068a"
+	},
 	"menu": [
 		{
 			"title": "Home",
