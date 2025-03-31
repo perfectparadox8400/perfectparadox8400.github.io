@@ -56,13 +56,13 @@ import website from '../website.json';
 .intro .intro-info h2 {
     color: #fff;
     margin-bottom: 60px;
-    font-size: 48px;
+    font-size: 2.6em;
     font-weight: 700;
 }
 
 .intro .intro-info h5 {
     color: #fff;
-    font-size: 18px;
+    font-size: 1.1em;
     font-weight: 400;
     margin-bottom: 40px;
 }
@@ -112,6 +112,10 @@ import website from '../website.json';
     .intro {
         padding: 120px 0 90px;
     }
+    
+    .intro .intro-info h2 {
+        font-size: 2.3em;
+    }
 }
 
 @media (max-width: 991px) {
@@ -141,11 +145,6 @@ import website from '../website.json';
     .intro .intro-info {
         width: 100%;
     }
-
-    .intro .intro-info h2 {
-        font-size: 34px;
-        margin-bottom: 30px;
-    }
 }
 
 @media (max-width: 574px) {
@@ -158,7 +157,11 @@ import website from '../website.json';
     }
 
     .intro .intro-info h2 {
-        font-size: 28px;
+        font-size: 2em;
+    }
+
+    .intro .intro-info h5 {
+        font-size: 1em;
     }
 }
 </style>

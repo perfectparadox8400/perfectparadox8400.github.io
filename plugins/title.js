@@ -8,7 +8,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     });
     
     useHead(() => ({
-      title: title.value ? `${title.value} | `.website.name : website.name,
-      meta: [{ property: 'og:title', content: title.value ? `${title.value} | `.website.name : website.name }]
+      title: title.value ? `${title.value} | ${website.name}` : website.name,
+      meta: [{ property: 'og:title', content: title.value ? `${title.value} | ${website.name}` : website.name }]
     }));
 });
