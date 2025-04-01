@@ -1561,9 +1561,19 @@ body.scroll {
   padding-right: 35px;
 }
 
-.main-nav .drop-down .drop-down > a span{
+.main-nav .drop-down .drop-down > a span {
   position: absolute;
   right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.main-nav .drop-down .drop-down > a span.down {
+  display: inline-block;
+}
+
+.main-nav .drop-down .drop-down > a span.up {
+  display: none;
 }
 
 /* Mobile Navigation */

@@ -26,12 +26,26 @@
                             :class="{ 'drop-down': item.subMenu }">
                             <a v-bind="item.url === false ? {} : { href: item.url || '#' }">{{ item.title || item.name
                                 }}
-                                <Icon v-if="item.url === false" name="octicon:chevron-down-12" class="down" />
-                                <Icon v-if="item.url === false" name="octicon:chevron-up-12" class="up" />
+                                <Icon v-if="item.subMenu" name="octicon:chevron-down-12" class="down" />
+                                <Icon v-if="item.subMenu" name="octicon:chevron-up-12" class="up" />
                             </a>
                             <ul v-if="item.subMenu">
-                                <li v-for="subItem in item.subMenu" :key="subItem.name">
-                                    <a :href="subItem.url" :target="subItem.target">{{ subItem.name }}</a>
+                                <li v-for="subItem in item.subMenu" :key="subItem.name || subItem.title"
+                                    :class="{ 'drop-down': subItem.subMenu }">
+                                    <a v-if="subItem.name" :href="subItem.url" :target="subItem.target">{{ subItem.name
+                                        }}</a>
+                                    <a v-else-if="subItem.title"
+                                        v-bind="subItem.url === false ? {} : { href: subItem.url || '#' }">
+                                        {{ subItem.title }}
+                                        <Icon v-if="subItem.subMenu" name="octicon:chevron-down-12" class="down" />
+                                        <Icon v-if="subItem.subMenu" name="octicon:chevron-up-12" class="up" />
+                                    </a>
+                                    <ul v-if="subItem.title">
+                                        <li v-for="subSubItem in subItem.subMenu" :key="subSubItem.name">
+                                            <a :href="subSubItem.url" :target="subSubItem.target">{{ subSubItem.name
+                                                }}</a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </li>
@@ -44,13 +58,26 @@
         <nav class="mobile-nav d-lg-none">
             <ul>
                 <li v-for="item in website.menu" :key="item.title || item.name" :class="{ 'drop-down': item.subMenu }">
-                    <a v-bind="item.url === false ? {} : { href: item.url || '#' }">{{ item.title || item.name }}
-                        <Icon v-if="item.url === false" name="octicon:chevron-down-12" class="down" />
-                        <Icon v-if="item.url === false" name="octicon:chevron-up-12" class="up" />
+                    <a v-bind="item.url === false ? {} : { href: item.url || '#' }">{{ item.title || item.name
+                        }}
+                        <Icon v-if="item.subMenu" name="octicon:chevron-down-12" class="down" />
+                        <Icon v-if="item.subMenu" name="octicon:chevron-up-12" class="up" />
                     </a>
                     <ul v-if="item.subMenu">
-                        <li v-for="subItem in item.subMenu" :key="subItem.name">
-                            <a :href="subItem.url" :target="subItem.target">{{ subItem.name }}</a>
+                        <li v-for="subItem in item.subMenu" :key="subItem.name || subItem.title"
+                            :class="{ 'drop-down': subItem.subMenu }">
+                            <a v-if="subItem.name" :href="subItem.url" :target="subItem.target">{{ subItem.name }}</a>
+                            <a v-else-if="subItem.title"
+                                v-bind="subItem.url === false ? {} : { href: subItem.url || '#' }">
+                                {{ subItem.title }}
+                                <Icon v-if="subItem.subMenu" name="octicon:chevron-down-12" class="down" />
+                                <Icon v-if="subItem.subMenu" name="octicon:chevron-up-12" class="up" />
+                            </a>
+                            <ul v-if="subItem.title">
+                                <li v-for="subSubItem in subItem.subMenu" :key="subSubItem.name">
+                                    <a :href="subSubItem.url" :target="subSubItem.target">{{ subSubItem.name }}</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </li>
@@ -147,321 +174,5 @@ const loaded = () => {
 </script>
 
 <style scoped>
-@keyframes zoom {
-    0% {
-        -webkit-transform: scale(1);
-    }
-
-    50% {
-        -webkit-transform: scale(1.05);
-    }
-
-    100% {
-        -webkit-transform: scale(1);
-    }
-}
-
-.header {
-    width: 100%;
-    z-index: 997;
-    transition: height 1s;
-    padding: 0;
-    background: #fff;
-    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-}
-
-.dark-mode .header {
-    background: #000;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
-}
-
-.navbar-size {
-    height: 80px;
-}
-
-.navbar-small-size {
-    height: 60px;
-}
-
-.title {
-    display: inline-block;
-    vertical-align: center;
-    transition: all 1s ease;
-    opacity: 1;
-    transform: translateY(0);
-    padding-right: 36px;
-}
-
-.title a {
-    font-size: 16px;
-    margin: 0;
-    padding: 0;
-    line-height: 1;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: #5e068a;
-    font-family: "Montserrat", sans-serif;
-}
-
-.dark-mode .title a {
-    color: #D16DFD;
-}
-
-.loading {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    text-align: center;
-    padding: 10svh 0;
-}
-
-.loading-done {
-    flex-direction: row;
-    padding: 0;
-}
-
-.logo {
-    float: left;
-    display: flex;
-    align-items: center;
-}
-
-.logo-box img {
-    transition: all 1s;
-    max-width: 90svh;
-    max-height: 90svh;
-}
-
-.zoom {
-    margin: auto;
-    height: 80svh;
-    -webkit-animation: zoom 1.5s linear infinite;
-    animation: zoom 1.5s linear infinite;
-}
-
-@media (max-width: 991px) {
-    .logo-box img {
-        max-width: 70svh;
-        max-height: 70svh;
-    }
-
-    .zoom {
-        max-height: 60svh;
-        max-width: 60svh;
-    }
-}
-
-@media (max-width: 767px) {
-    .logo-box img {
-        max-width: 50svh;
-        max-height: 50svh;
-    }
-
-    .zoom {
-        max-height: 40svh;
-        max-width: 40svh;
-    }
-}
-
-@media (max-width: 574px) {
-    .logo-box img {
-        max-width: 40svh;
-        max-height: 40svh;
-    }
-
-    .zoom {
-        max-height: 30svh;
-        max-width: 30svh;
-    }
-}
-
-@media (max-width: 374px) {
-    .logo-box img {
-        max-width: 30svh;
-        max-height: 30svh;
-    }
-
-    .zoom {
-        max-height: 20svh;
-        max-width: 20svh;
-    }
-
-    .title a {
-        font-size: 14px;
-    }
-}
-
-.loadbar {
-    transition: all 0.75s;
-    background-color: #afb0b3;
-    height: auto;
-    border-radius: 5px;
-    position: relative;
-    opacity: 1;
-}
-
-.dark-mode .loadbar {
-    background-color: #2a2a2a;
-}
-
-.loadbar p {
-    margin: 0;
-}
-
-.loading-bar {
-    background-color: #7f26d3;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    border-radius: 5px;
-    color: #fff;
-    transition: width 0.5s;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    width: 0%;
-}
-
-.loading-bar-animated {
-    animation: loadingAnimation 38s forwards;
-}
-
-@keyframes loadingAnimation {
-
-    0%,
-    5% {
-        width: 0%;
-    }
-
-    5%,
-    10% {
-        width: 5%;
-    }
-
-    10%,
-    15% {
-        width: 10%;
-    }
-
-    15%,
-    20% {
-        width: 15%;
-    }
-
-    20%,
-    25% {
-        width: 20%;
-    }
-
-    25%,
-    30% {
-        width: 25%;
-    }
-
-    30%,
-    35% {
-        width: 30%;
-    }
-
-    35%,
-    40% {
-        width: 35%;
-    }
-
-    40%,
-    45% {
-        width: 40%;
-    }
-
-    45%,
-    50% {
-        width: 45%;
-    }
-
-    50%,
-    55% {
-        width: 50%;
-    }
-
-    55%,
-    60% {
-        width: 55%;
-    }
-
-    60%,
-    65% {
-        width: 60%;
-    }
-
-    65%,
-    70% {
-        width: 65%;
-    }
-
-    70%,
-    75% {
-        width: 70%;
-    }
-
-    75%,
-    80% {
-        width: 75%;
-    }
-
-    80%,
-    85% {
-        width: 80%;
-    }
-
-    85%,
-    90% {
-        width: 85%;
-    }
-
-    90%,
-    100% {
-        width: 90%;
-    }
-}
-
-.no-transition {
-    transition: none;
-}
-
-.loading-bar-done {
-    transition: width 0.5s;
-    width: 100% !important;
-}
-
-.loading-bar-done-important {
-    background-color: transparent !important;
-}
-
-.navbar {
-    height: 80px;
-    z-index: 997;
-    padding: 20px 0;
-    float: right;
-    transition: all 1s ease;
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.nav-size {
-    padding: 10px 0;
-}
-
-.load-hide {
-    opacity: 0;
-    transform: translateY(-100%);
-}
-
-.loadbar-hide {
-    opacity: 0;
-}
+@import url("~/assets/css/navbar.css");
 </style>

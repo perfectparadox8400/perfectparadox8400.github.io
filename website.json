@@ -9,14 +9,14 @@
 	"menu": [
 		{
 			"title": "Home",
-			"url": false,
+			"url": "/",
 			"subMenu": [
 				{
 					"name": "Intro",
 					"url": "#intro"
 				},
 				{
-					"name": "About Us",
+					"name": "About",
 					"url": "#about"
 				},
 				{
@@ -34,7 +34,15 @@
 			]
 		},
 		{
-			"title": "FIRST",
+			"name": "Contact Us",
+			"url": "#contact"
+		},
+		{
+			"name": "Sponsor Us",
+			"url": "#sponsors"
+		},
+		{
+			"title": "More",
 			"url": false,
 			"subMenu": [
 				{
@@ -51,23 +59,19 @@
 					"name": "FIRST ® Robotics Competition",
 					"url": "https://www.firstinspires.org/robotics/frc",
 					"target": "_blank"
-				}
-			]
-		},
-		{
-			"title": "More",
-			"url": false,
-			"subMenu": [
+				},
 				{
-					"name": "Readme",
-					"url": "https://www.youtube.com/watch?v=uHgt8giw1LY",
-					"target": "_blank"
+					"title": "Extra",
+					"url": false,
+					"subMenu": [
+						{
+							"name": "Readme :)",
+							"url": "https://www.youtube.com/watch?v=uHgt8giw1LY",
+							"target": "_blank"
+						}
+					]
 				}
 			]
-		},
-		{
-			"name": "Contact Us",
-			"url": "#contact"
 		}
 	],
 	"home": {
