@@ -3,7 +3,14 @@ import website from './website.json'
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['@nuxt/content', 'nuxt-config-schema', '@nuxt/icon', '@nuxtjs/google-fonts', '@nuxt/image', '@nuxtjs/color-mode'],
+  modules: [
+    '@nuxt/content',
+    'nuxt-config-schema',
+    '@nuxt/icon',
+    '@nuxt/image',
+    '@nuxtjs/color-mode',
+    '@nuxt/fonts'
+  ],
   app: {
     head: {
       htmlAttrs: {
@@ -30,11 +37,11 @@ export default defineNuxtConfig({
     '~/plugins/webpack.client.js',
     '~/plugins/title.js'
   ],
-  googleFonts: {
-    families: {
-      'Open+Sans': [300, 400, 500, 700],
-      'Montserrat': [300, 400, 500, 700],
-    }
+  fonts: {
+    families: [
+      { name: 'Open+Sans', provider: 'google',  weights: [300, 400, 500, 700]},
+      { name: 'Montserrat', provider: 'google', weights: [300, 400, 500, 700]}
+    ]
   },
   colorMode: {
     preference: 'system',
