@@ -66,7 +66,7 @@ import { NuxtImg } from '#components';
 }
 
 .dark-mode .sponsors .client-logo {
-	background: #000;
+	background: #222;
 }
 
 .sponsors .client-logo img {
@@ -75,8 +75,8 @@ import { NuxtImg } from '#components';
 }
 
 .dark-mode .sponsors .client-logo img {
-	-webkit-filter: drop-shadow(0 0 3px #ffffff);
-  filter: drop-shadow(0 0 3px #ffffff);
+	-webkit-filter: drop-shadow(0 0 1px #fff);
+  	filter: drop-shadow(0 0 1px #fff);
 }
 
 .sponsors .client-logo:hover img {
