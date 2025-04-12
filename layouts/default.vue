@@ -3,10 +3,10 @@
 </style>
 <template>
     <div>
-        <Navbar/>
-        <slot/>
-        <Footer/>
-        <Back2Top/>
+        <Navbar />
+        <slot />
+        <Footer />
+        <Back2Top />
     </div>
 </template>
 <script>
@@ -95,7 +95,7 @@ export default {
             if (cur_pos > 100) {
                 main_nav_height = 60;
             }
-            main_nav_height += window.innerHeight/2;
+            main_nav_height += window.innerHeight / 4;
             nav_sections.each(function () {
                 var top = $(this).offset().top - main_nav_height,
                     bottom = top + $(this).outerHeight();
@@ -103,7 +103,7 @@ export default {
                 if (cur_pos >= top && cur_pos <= bottom) {
                     main_nav.find("li").removeClass("active");
                     main_nav
-                        .find('a[href="#' + $(this).attr("id") + '"]')
+                        .find(`a[href="/#${$(this).attr("id")}"], a[href="#${$(this).attr("id")}"], a[href="/${$(this).attr("id")}"]`)
                         .parent("li")
                         .addClass("active");
                 }
@@ -111,6 +111,33 @@ export default {
         }
 
         scrollHighlight();
+        this.highlightNavLink(window.location.pathname, "");
+    },
+    watch: {
+        $route(to, from) {
+            this.onUrlChange(to, from);
+        },
+    },
+    methods: {
+        onUrlChange(to, from) {
+            this.highlightNavLink(to.href, from.href);
+        },
+        highlightNavLink(to, from) {
+            var main_nav = $(".main-nav, .mobile-nav");
+            let aTo = to.replace(/^\/+/, "");
+            let aFrom = from.replace(/^\/+/, "");
+            if (aTo == aFrom) {
+                return;
+            }
+            main_nav
+                .find(`a[href="/#${aFrom}"], a[href="#${aFrom}"], a[href="/${aFrom}"]`)
+                .parent("li")
+                .removeClass("active");
+            main_nav
+                .find(`a[href="/#${aTo}"], a[href="#${aTo}"], a[href="/${aTo}"]`)
+                .parent("li")
+                .addClass("active");
+        },
     },
 };
 </script>

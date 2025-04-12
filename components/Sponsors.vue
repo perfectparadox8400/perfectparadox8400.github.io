@@ -38,7 +38,7 @@ import { NuxtImg } from '#components';
 }
 
 .dark-mode .sponsors {
-	background: #111111;
+	background: #121212;
 }
 
 .sponsors .section-header p {

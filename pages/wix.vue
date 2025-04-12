@@ -25,9 +25,10 @@
 
 <script setup>
 import website from '../website.json';
-const { $setTitle } = useNuxtApp();
+const { $setTitle, $setDiscription } = useNuxtApp();
 
 $setTitle('Wix');
+$setDiscription('Redirecting to Main Page...');
 
 definePageMeta({
     layout: 'none',
