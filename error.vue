@@ -28,8 +28,13 @@ $setTitle(props.error?.statusCode?.toString() || 'Error');
 
 .errorPage {
     background-color: #fff;
-    padding: 140px 0 100px;
     text-align: center;
+    height: calc(100vh - (458.5px + 30px) - 60px);
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .dark-mode .errorPage {

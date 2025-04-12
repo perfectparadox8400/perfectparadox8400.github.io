@@ -42,7 +42,7 @@ onMounted(() => {
 }
 
 .dark-mode .team {
-    background: #111111;
+    background: #121212;
 }
 
 .team-box {

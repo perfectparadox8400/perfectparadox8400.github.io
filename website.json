@@ -13,33 +13,33 @@
 			"subMenu": [
 				{
 					"name": "Intro",
-					"url": "#intro"
+					"url": "/#intro"
 				},
 				{
 					"name": "About",
-					"url": "#about"
+					"url": "/#about"
 				},
 				{
 					"name": "Members",
-					"url": "#team"
+					"url": "/#team"
 				},
 				{
 					"name": "Contact",
-					"url": "#contact"
+					"url": "/#contact"
 				},
 				{
 					"name": "Sponsors",
-					"url": "#sponsors"
+					"url": "/#sponsors"
 				}
 			]
 		},
 		{
 			"name": "Contact Us",
-			"url": "#contact"
+			"url": "/#contact"
 		},
 		{
 			"name": "Sponsor Us",
-			"url": "#sponsors"
+			"url": "/#sponsors"
 		},
 		{
 			"title": "More",

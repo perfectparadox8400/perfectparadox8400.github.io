@@ -24,26 +24,40 @@
                     <ul>
                         <li v-for="item in website.menu" :key="item.title || item.name"
                             :class="{ 'drop-down': item.subMenu }">
-                            <a v-bind="item.url === false ? {} : { href: item.url || '#' }">{{ item.title || item.name
-                                }}
-                                <Icon v-if="item.subMenu" name="octicon:chevron-down-12" class="down" />
-                                <Icon v-if="item.subMenu" name="octicon:chevron-up-12" class="up" />
-                            </a>
+                            <template v-if="isLocalLink(item.url)">
+                                <NuxtLink :to="item.url">{{ item.title || item.name }}
+                                    <Icon v-if="item.subMenu" name="octicon:chevron-down-12" class="down" />
+                                    <Icon v-if="item.subMenu" name="octicon:chevron-up-12" class="up" />
+                                </NuxtLink>
+                            </template>
+                            <template v-else>
+                                <a test="hhj" v-bind="item.url === false ? {} : { href: item.url || '#' }">{{ item.title ||
+                                    item.name }}
+                                    <Icon v-if="item.subMenu" name="octicon:chevron-down-12" class="down" />
+                                    <Icon v-if="item.subMenu" name="octicon:chevron-up-12" class="up" />
+                                </a>
+                            </template>
                             <ul v-if="item.subMenu">
                                 <li v-for="subItem in item.subMenu" :key="subItem.name || subItem.title"
                                     :class="{ 'drop-down': subItem.subMenu }">
-                                    <a v-if="subItem.name" :href="subItem.url" :target="subItem.target">{{ subItem.name
-                                        }}</a>
-                                    <a v-else-if="subItem.title"
-                                        v-bind="subItem.url === false ? {} : { href: subItem.url || '#' }">
-                                        {{ subItem.title }}
-                                        <Icon v-if="subItem.subMenu" name="octicon:chevron-down-12" class="down" />
-                                        <Icon v-if="subItem.subMenu" name="octicon:chevron-up-12" class="up" />
-                                    </a>
+                                    <template v-if="isLocalLink(subItem.url)">
+                                        <NuxtLink :to="subItem.url">{{ subItem.name || subItem.title }}</NuxtLink>
+                                    </template>
+                                    <template v-else>
+                                        <a v-if="subItem.name" :href="subItem.url" :target="subItem.target">{{
+                                            subItem.name
+                                            }}</a>
+                                        <a v-else-if="subItem.title"
+                                            v-bind="subItem.url === false ? {} : { href: subItem.url || '#' }">
+                                            {{ subItem.title }}
+                                            <Icon v-if="subItem.subMenu" name="octicon:chevron-down-12" class="down" />
+                                            <Icon v-if="subItem.subMenu" name="octicon:chevron-up-12" class="up" />
+                                        </a>
+                                    </template>
                                     <ul v-if="subItem.title">
                                         <li v-for="subSubItem in subItem.subMenu" :key="subSubItem.name">
                                             <a :href="subSubItem.url" :target="subSubItem.target">{{ subSubItem.name
-                                                }}</a>
+                                            }}</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -59,7 +73,7 @@
             <ul>
                 <li v-for="item in website.menu" :key="item.title || item.name" :class="{ 'drop-down': item.subMenu }">
                     <a v-bind="item.url === false ? {} : { href: item.url || '#' }">{{ item.title || item.name
-                        }}
+                    }}
                         <Icon v-if="item.subMenu" name="octicon:chevron-down-12" class="down" />
                         <Icon v-if="item.subMenu" name="octicon:chevron-up-12" class="up" />
                     </a>
@@ -102,9 +116,13 @@ const loadingBox = ref(null);
 const colorMode = useColorMode();
 const colorTheme = ref("line-md:sunny-loop");
 
+const isLocalLink = (url) => {
+    return url && !url.startsWith('http') && !url.startsWith('mailto:') && !url.startsWith('tel:') && !url.startsWith('#');
+};
+
 const getIconName = () => {
     return colorMode.preference === 'dark' ? "line-md:moon-loop" : colorMode.preference === 'light' ? "line-md:sunny-loop" : "line-md:monitor";
-}
+};
 
 const changeColor = () => {
     if (colorMode.preference === 'light') {
@@ -135,10 +153,7 @@ const handleScroll = () => {
 
 onMounted(async () => {
     colorTheme.value = getIconName();
-    await nextTick();
-    setTimeout(async () => {
-        loaded();
-    }, 1000);
+    loaded();
 });
 
 onUnmounted(() => {
