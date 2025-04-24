@@ -5,7 +5,7 @@ description: 'Become a sponsor of Perfect Paradox 8400'
 
 <h1 class="purple">Perfect Parodox 8400 </h1>
 
-<h2>invites you to invest in the future of robotics by sponsoring our team!</h2>
+<h2>We invite you to invest in the future of robotics by sponsoring our team!</h2>
 
 <h3 class="purple">WHO ARE WE?</h3>
 
@@ -13,7 +13,7 @@ We are PERFECT PARADOX, a FIRST Robotics Competition team of 13 members, dedicat
 
 <h3 class="purple">WHY SPONSOR?</h3>
 
-Our team is the top team in Utah selected to attend an international robotics competition. Your TAXDEDUCTIBLE sponsorship will help our team attend this once-in-a-lifetime event this summer and support our team’s competition next season by funding the purchase of new parts for our robot, registrations, and travel to competitions. Thank you for considering this sponsorship!
+Our team is the top team in Utah selected to attend an international robotics competition. Your sponsorship will help our team attend this once-in-a-lifetime event this summer and support our team’s competition next season by funding the purchase of new parts for our robot, registrations, and travel to competitions. Thank you for considering this sponsorship!
 
 $3,000+ PURPLE SPONSOR: All benefits of GOLD sponsors your advertisement on our 4th of July parade float and at our city park demonstration, invitation to exclusive sponsor dinner.
 
