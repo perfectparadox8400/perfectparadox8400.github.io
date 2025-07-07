@@ -24,6 +24,7 @@
     "@nuxt/image": "1.10.0",
     "@nuxtjs/color-mode": "3.5.2",
     "animate.css": "3.5.2",
+    "better-sqlite3": "^12.2.0",
     "counterup": "^1.0.2",
     "isotope-layout": "^3.0.6",
     "jquery": "^3.7.1",

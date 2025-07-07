@@ -8,7 +8,7 @@
             <div class="container" style="height: 100%;">
                 <div ref="loadingBox" class="loading">
                     <div class="logo-box">
-                        <img :src="website.logo" ref="logo" class="zoom navbar-size" alt="logo" />
+                        <img :src="website.logo" ref="logo" class="zoom navbar-size" alt="logo" @click="lightning" />
                     </div>
                     <div ref="title" class="title load-hide">
                         <a href="/">&nbsp;{{ website.name }}</a>
@@ -149,6 +149,14 @@ const handleScroll = () => {
         mobileNav.value?.classList.remove('navbar-small-size');
         nav.value?.classList.remove('nav-size');
     }
+};
+
+const lightning = () => {
+    console.log('Easter Egg Lightning!');
+    logo.value.src = "/img/logo-lightning.gif";
+    setTimeout(() => {
+        logo.value.src = website.logo;
+    }, 5000);
 };
 
 onMounted(async () => {

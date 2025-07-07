@@ -10,8 +10,8 @@
 					<h4>{{ group.title }}</h4>
 				</div>
 
-				<div v-if="group.sponsors" class="clients-wrap wow fadeInUp">
-					<div v-for="(sponsor, sponsorIndex) in group.sponsors" :key="sponsorIndex" class="client-logo">
+				<div v-if="group.sponsors" class="clients-wrap">
+					<div v-for="(sponsor, sponsorIndex) in group.sponsors" :key="sponsorIndex" class="client-logo wow fadeInUp">
 						<a :href="sponsor.url" target="_blank" rel="noopener noreferrer">
 							<NuxtImg v-if="sponsor.logo" width="300" height="180" fit="outside" :src="sponsor.logo" :alt="sponsor.name" format="webp"/>
 							<p v-else>{{ sponsor.name }}</p>
