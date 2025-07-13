@@ -8,7 +8,7 @@
             <div class="container" style="height: 100%;">
                 <div ref="loadingBox" class="loading">
                     <div class="logo-box">
-                        <img :src="website.logo" ref="logo" class="zoom navbar-size" alt="logo" @click="lightning" />
+                        <img :src="website.logo" ref="logo" class="zoom navbar-size" alt="logo" @click="lightning($event)" />
                     </div>
                     <div ref="title" class="title load-hide">
                         <a href="/">&nbsp;{{ website.name }}</a>
@@ -151,16 +151,42 @@ const handleScroll = () => {
     }
 };
 
-const lightning = () => {
+const lightning = (event) => {
     console.log('Easter Egg Lightning!');
-    logo.value.src = "/img/logo-lightning.gif";
-    setTimeout(() => {
+    if (event.ctrlKey) {
+        toggleLightning();
+    } else {
+        logo.value.src = "/img/logo-lightning.gif";
+        setTimeout(() => {
+            logo.value.src = website.logo;
+            localStorage.setItem('lightningHeld', 'false');
+        }, 5000);
+    }
+};
+
+const toggleLightning = () => {
+    const lightningHeld = localStorage.getItem('lightningHeld');
+    if (lightningHeld === 'true') {
+        localStorage.setItem('lightningHeld', 'false');
         logo.value.src = website.logo;
-    }, 5000);
+    } else {
+        localStorage.setItem('lightningHeld', 'true');
+        logo.value.src = "/img/logo-lightning.gif";
+    }
+};
+
+const checkLightning = () => {
+    const lightningHeld = localStorage.getItem('lightningHeld');
+    if (lightningHeld === 'true') {
+        logo.value.src = "/img/logo-lightning.gif";
+    } else {
+        logo.value.src = website.logo;
+    }
 };
 
 onMounted(async () => {
     colorTheme.value = getIconName();
+    checkLightning();
     loaded();
 });
 
