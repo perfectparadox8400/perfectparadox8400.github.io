@@ -1,3 +1,4 @@
+
 [
     {
         "title": "Our Partners",
@@ -17,22 +18,44 @@
                 "logo": "/img/sponsors/4h.png",
                 "url": "https://extension.usu.edu/4h-and-youth/"
             }
+
+        ]
+    },
+
+    {
+        "title": "Purple Sponsors",
+        "sponsors": [
+            {
+                "name": "Fundraising Adventures",
+                "logo": "/img/sponsors/fundraisingadventures.png",
+                "url": "https://fundraisingadventures.com/"
+            },
+            {
+                "name": "Dippers",
+                "logo": "/img/sponsors/dippers.png",
+                "url": "https://dippersbananas.com/"
+            },
+            {
+                "name": "Firehouse Subs",
+                "logo": "/img/sponsors/firehousesubs.png",
+                "url": "https://www.firehousesubs.com/"
+            }
         ]
     },
     {
-        "title": "Purple Sponsors"
-    },
-    {
-        "title": "Gold Sponsors"
-    },
-    {
-        "title": "Silver Sponsors",
+        "title": "Gold Sponsors",
         "sponsors": [
             {
                 "name": "Gene Haas Foundation",
                 "logo": "/img/sponsors/genehaasfoundation.png",
                 "url": "https://www.ghaasfoundation.org/"
-            },
+            }
+        ]
+    },
+    {
+        "title": "Silver Sponsors",
+        "sponsors": [
+
             {
                 "name": "STEM Action Center",
                 "logo": "/img/sponsors/stemactioncenter.png",
@@ -59,8 +82,22 @@
                 "url": "https://www.bzi.com/"
             },
             {
-                "name": "Tom Comstock"
+                "name": "Milford Mining Company",
+                "logo": "/img/sponsors/milfordminingcompany.png",
+                "url": "https://www.milfordmining.com/"
+            },
+            {
+                "name": "Clark and Linford Jewelers",
+                "logo": "clarklinford.png",
+                "url": "https://www.clarklinford.com/"
+            },
+            {
+                "name": "Precision Development",
+                "logo": "/img/sponsors/precisiondevelopment.png",
+                "url": "https://precisiondevelopmentinc.net/"
             }
+            
+            
         ]
 
     },
@@ -87,19 +124,20 @@
                 "logo": "/img/sponsors/noggingames.png",
                 "url": "https://www.facebook.com/NogginGames/"
             },
-            {
-                "name": "Suriyanarayanan Ramesh"
+           {
+              "name": "Costco",
+              "logo": "/img/sponsors/costco.png",
+               "url": "https://www.costco.com/"
             },
             {
-                "name": "Mitthan Meena"
-            },
+                "name": "PetSense",
+                "logo": "/img/sponsors/petsense.png",
+                 "url": "https://www.petsense.com/"
+              },
             {
                 "name": "Southern Utah Vision Care",
                 "logo": "/img/sponsors/southernutahvisioncare.png",
                 "url": "https://www.southernutahvisioncare.com/"
-            },
-            {
-                "name": "Balamurugan Balasubramanian"
             },
             {
                 "name": "Natural Grocers",
@@ -107,19 +145,36 @@
                 "url": "https://www.naturalgrocers.com/"
             },
             {
-                "name": "K. Rajagopalan"
+                "name": "The Pizza Cart",
+                "logo": "/img/sponsors/pizzacart.png",
+                "url": "https://cedarcitypizzacart.com/"
             },
             {
-                "name": "Betty Frazier"
+                "name": "Wilson Orthadontics",
+                "logo": "/img/sponsors/wilson.jpg",
+                "url": "https://www.wwbraces.com/"
             },
             {
-                "name": "Iron County Fair",
-                "logo": "/img/sponsors/ironcountyfair.png",
-                "url": "https://www.ironcountyfair.net/"
+                "name": "Watson Engineering Company, Inc.",
+                "logo": "/img/sponsors/watsonengineering.png",
+                "url": "https://www.wecinc.com/"
             },
             {
-                "name": "J. Amos Bishop"
+                "name": "Reliant Engineering and Design",
+                "logo": "/img/sponsors/reliantengineering.png",
+                "url": "https://reliant.engineer/"
+            },
+            {
+                "name": "Red Peak Gym",
+                "logo": "/img/sponsors/redpeakgym.png",
+                "url": "https://www.redpeakgym.com/?srsltid=AfmBOorR-9YoHxHJbr7H_62bJOpKWz_A3XgWjAXeDKbfz5iVczQZQCDO"
+            },
+            {
+                "name": "Image Pro",
+                "logo": "/img/sponsors/imagepro.png",
+                "url": "https://www.imageproprint.com/"
             }
+
         ]
     }
 ]
