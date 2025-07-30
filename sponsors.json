@@ -1,4 +1,3 @@
-
 [
     {
         "title": "Our Partners",
@@ -18,10 +17,8 @@
                 "logo": "/img/sponsors/4h.png",
                 "url": "https://extension.usu.edu/4h-and-youth/"
             }
-
         ]
     },
-
     {
         "title": "Purple Sponsors",
         "sponsors": [
@@ -55,7 +52,6 @@
     {
         "title": "Silver Sponsors",
         "sponsors": [
-
             {
                 "name": "STEM Action Center",
                 "logo": "/img/sponsors/stemactioncenter.png",
@@ -88,7 +84,7 @@
             },
             {
                 "name": "Clark and Linford Jewelers",
-                "logo": "clarklinford.png",
+                "logo": "/img/sponsors/clarklinford.png",
                 "url": "https://www.clarklinford.com/"
             },
             {
@@ -96,10 +92,7 @@
                 "logo": "/img/sponsors/precisiondevelopment.png",
                 "url": "https://precisiondevelopmentinc.net/"
             }
-            
-            
         ]
-
     },
     {
         "title": "Mohogany Sponsors",
@@ -124,16 +117,16 @@
                 "logo": "/img/sponsors/noggingames.png",
                 "url": "https://www.facebook.com/NogginGames/"
             },
-           {
-              "name": "Costco",
-              "logo": "/img/sponsors/costco.png",
-               "url": "https://www.costco.com/"
+            {
+                "name": "Costco",
+                "logo": "/img/sponsors/costco.png",
+                "url": "https://www.costco.com/"
             },
             {
                 "name": "PetSense",
                 "logo": "/img/sponsors/petsense.png",
-                 "url": "https://www.petsense.com/"
-              },
+                "url": "https://www.petsense.com/"
+            },
             {
                 "name": "Southern Utah Vision Care",
                 "logo": "/img/sponsors/southernutahvisioncare.png",
@@ -151,7 +144,7 @@
             },
             {
                 "name": "Wilson Orthadontics",
-                "logo": "/img/sponsors/wilson.jpg",
+                "logo": "/img/sponsors/wilson.png",
                 "url": "https://www.wwbraces.com/"
             },
             {
@@ -167,14 +160,13 @@
             {
                 "name": "Red Peak Gym",
                 "logo": "/img/sponsors/redpeakgym.png",
-                "url": "https://www.redpeakgym.com/?srsltid=AfmBOorR-9YoHxHJbr7H_62bJOpKWz_A3XgWjAXeDKbfz5iVczQZQCDO"
+                "url": "https://www.redpeakgym.com/"
             },
             {
                 "name": "Image Pro",
                 "logo": "/img/sponsors/imagepro.png",
                 "url": "https://www.imageproprint.com/"
             }
-
         ]
     }
 ]
