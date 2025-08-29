@@ -1,23 +1,5 @@
 [
     {
-        "name": "Allan",
-        "role": "Programming Captain",
-        "description": "I am Allan and I love to code and build robots. All I ever do is 🧑‍💻, do school and sleep, oh and I'm 17. :)",
-        "image": "/img/members/allan.jpg"
-    },
-    {
-        "name": "Cason",
-        "role": "Outreach Captain",
-        "description": "I am 17 years old and a senior in high school. I have been on the team for 4 years, and I also love band, choir, cross country, piano, and writing. I squat 255 hehehe.",
-        "image": "/img/members/cason.jpg"
-    },
-    {
-        "name": "Jonny",
-        "role": "Build Captain",
-        "description": "I like robots and building things. I enjoy learning how things work and attempting to build them myself. I enjoy singing in CHS's Madrigals choir. I like to spend my free time reading and accidentally taking naps.",
-        "image": "/img/members/jonny.jpg"
-    },
-    {
         "name": "Melody",
         "role": "Portfolio Captain",
         "description": "I am Melody and I am 17 years old, and junior in high school. I enjoy reading, painting, CAD design, and bad jokes.",
@@ -30,12 +12,6 @@
         "image": "/img/members/matthew.jpg"
     },
     {
-        "name": "Porter",
-        "role": "Team Member",
-        "description": "I'm Poter, a homeschooler who comes from a family of 14 kids. I take a lot of classes at southwest tech, and am currently enjoying welding.",
-        "image": "/img/members/porter.jpg"
-    },
-    {
         "name": "Wade",
         "role": "Team Member",
         "description": "I am Wade. I'm 14 years old, and in 8th grade. I like codeing, tech, and building. I am homeschooled and spend most of my time at home which leaves me with lots of time to code and explore technology.",
@@ -44,7 +20,7 @@
     {
         "name": "Crosby",
         "role": "Team Member",
-        "description": "Hi I'm Crosby",
+        "description": "Hi I'm Crosby! I like to code and probably am not hacking your PC",
         "image": "/img/members/crosby.jpg"
     },
     {
