@@ -1,4 +1,5 @@
 .sponsors {
+  width: 100%;
   background: white;
   padding: 30px 0;
   overflow: hidden;
@@ -26,7 +27,6 @@
 /* The moving track */
 .scrolling-track {
   display: flex;
-  width: max-content;
   animation: scroll 60s linear infinite;
   padding: 5px 0px;
 }
