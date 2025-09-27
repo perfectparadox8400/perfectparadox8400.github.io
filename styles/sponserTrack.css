@@ -1,0 +1,61 @@
+.sponsors {
+  background: white;
+  padding: 30px 0;
+  overflow: hidden;
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #6d1c94;
+  }
+}
+/* Outer mask */
+.scrolling-logos {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* The moving track */
+.scrolling-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 60s linear infinite;
+  padding: 5px 0px;
+}
+
+.sponsor {
+  flex: 0 0 auto;
+  margin: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scrolling-track img {
+  max-height: 60px;
+  max-width: 150px;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+  padding: 5px;
+}
+
+.sponsor img:hover {
+  filter: grayscale(20%);
+}
+
+/* Continuous marquee scroll */
+@keyframes scroll {
+  from {
+    transform: translateX(42%);
+  }
+  to {
+    transform: translateX(-8%);
+  }
+}

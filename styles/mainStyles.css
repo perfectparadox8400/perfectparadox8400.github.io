@@ -1,0 +1,42 @@
+.about {
+  display: flex;
+  margin: 15px;
+  justify-content: center;
+  align-items: center;
+  .about-text {
+    padding: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
+    width: 40vw;
+  }
+  .about-image-container {
+    flex: 1;
+    img {
+      width: 40vw;
+      height: auto;
+      border-radius: 8px;
+    }
+  }
+}
+.Challenge {
+  display: flex;
+  margin: 15px;
+  justify-content: center;
+  align-items: center;
+  .challenge-text {
+    padding: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
+    width: 40vw;
+  }
+  .challenge-image-container {
+    flex: 1;
+    img {
+      width: 40vw;
+      height: auto;
+      border-radius: 8px;
+    }
+  }
+}
