@@ -1,6 +1,6 @@
 .about {
   display: flex;
-  margin: 15px;
+  margin: 15px 0;
   justify-content: center;
   align-items: center;
   .about-text {
@@ -21,7 +21,7 @@
 }
 .Challenge {
   display: flex;
-  margin: 15px;
+  margin: 15px 0;
   justify-content: center;
   align-items: center;
   .challenge-text {

@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0px;
@@ -22,6 +26,7 @@ nav {
     align-items: center;
     gap: 15px;
     width: 450px;
+    max-width: 100%;
     a {
       color: white;
       text-decoration: none;
@@ -78,7 +83,6 @@ header {
   background-image: url(../img/image.png);
   background-repeat: no-repeat;
   background-size: 100vw auto;
-  background-position: cover;
   height: 40vw;
   padding: 20px;
   h1 {
