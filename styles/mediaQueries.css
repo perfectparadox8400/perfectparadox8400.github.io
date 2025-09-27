@@ -1,0 +1,77 @@
+@media (width < 1000px) {
+  body {
+    overflow-x: hidden;
+  }
+  nav {
+    flex-direction: column;
+    height: fit-content;
+    padding-bottom: 10px;
+  }
+  header {
+    height: 40vw;
+    padding: 10px;
+    h1 {
+      color: white;
+      font-size: 5vw;
+      margin-top: 0px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+    h2 {
+      color: white;
+      font-size: 12px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+      width: 50vw;
+    }
+  }
+  .main {
+    width: 90vw;
+  }
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+  .sponsor-invitation {
+    order: 1;
+  }
+  .sponsor-levels {
+    order: 2;
+  }
+  .vid-grid {
+    grid-template-columns: 1fr;
+  }
+  .main-image {
+    grid-template-columns: 1fr;
+    img {
+      width: 90vw;
+    }
+  }
+  .about {
+    flex-direction: column;
+    .about-text {
+      width: 90vw;
+    }
+    .about-image-container {
+      img {
+        width: 90vw;
+      }
+    }
+  }
+  .Challenge {
+    flex-direction: column;
+    .challenge-text {
+      width: 90vw;
+      order: 1;
+    }
+    .challenge-image-container {
+      order: 2;
+      img {
+        width: 90vw;
+      }
+    }
+  }
+  footer {
+    height: fit-content;
+  }
+  canvas {
+    display: none;
+  }
+}
