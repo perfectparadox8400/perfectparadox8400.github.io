@@ -31,8 +31,21 @@ nav {
       color: white;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s ease;
       &:hover {
-        text-decoration: underline;
+        color: rgb(206, 101, 255);
+      }
+    }
+    .link-rounded {
+      border-radius: 25px;
+      background-color: #13d353;
+      padding: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color color 0.3s ease;
+      &:hover {
+        background-color: #7cf17c;
+        color: #4b0082;
       }
     }
   }
@@ -68,17 +81,7 @@ nav {
     }
   }
 }
-.link-rounded {
-  border-radius: 25px;
-  background-color: #6ecf8b;
-  padding: 10px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  &:hover {
-    background-color: #0fbf4a;
-  }
-}
+
 header {
   background-image: url(../img/image.png);
   background-repeat: no-repeat;
