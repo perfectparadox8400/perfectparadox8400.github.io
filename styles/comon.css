@@ -20,6 +20,14 @@ nav {
     align-items: center;
     font-size: 20px;
   }
+  .phone-menu-icon {
+    display: none;
+    font-size: 30px;
+    margin: 20px;
+    cursor: pointer;
+    color: white;
+  }
+
   .nav-links {
     display: flex;
     justify-content: center;
@@ -27,6 +35,22 @@ nav {
     gap: 15px;
     width: 450px;
     max-width: 100%;
+    .phone-menu-item {
+      display: none;
+      justify-content: space-between;
+      align-items: center;
+      gap: 100%;
+      width: 40vw;
+      .phone-menu-exit-icon {
+        font-size: 30px;
+        cursor: pointer;
+        color: white;
+        box-shadow: 0px 5px 14px 0px rgba(192, 192, 192, 0.75);
+        &:active {
+          color: blueviolet;
+        }
+      }
+    }
     a {
       color: white;
       text-decoration: none;
