@@ -87,7 +87,7 @@ const sponsors = [
   {
     href: "https://www.wwbraces.com/",
     img: "img/sponsors/wilson.png",
-    alt: "WW Braces",
+    alt: "Wilson Orthodontics",
   },
   {
     href: "https://www.wecinc.com/",
@@ -112,8 +112,8 @@ const sponsors = [
   // Newest Sponsors (remove this and move it when adding more)
   {
     href: "https://safarihospitality.com/",
-    img: "img/sponsors/safari.png",
-    alt: "Safari Hospitality",
+    img: "img/sponsors/hamptonInnLogo.png",
+    alt: "Hampton Inn Logo",
   },
   {
     href: "https://imlayplumbing.com/",
