@@ -31,6 +31,7 @@
   }
   .main {
     width: 90vw;
+    margin: 0 auto;
   }
   .main-grid {
     grid-template-columns: 1fr;
@@ -40,13 +41,6 @@
   }
   .sponsor-levels {
     order: 2;
-  }
-  .vid-grid {
-    grid-template-columns: 1fr;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    border: #4d086f solid 5px;
   }
   .main-image {
     grid-template-columns: 1fr;
@@ -116,7 +110,14 @@
     }
   }
 }
-
+.vid-grid {
+  display: flex;
+  justify-content: center;
+}
+  .vid-grid iframe {
+  width: 560px;
+  height: 315px;
+}
 @keyframes slideIn {
   from {
     transform: translateX(100%);
