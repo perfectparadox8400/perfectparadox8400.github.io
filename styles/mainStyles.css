@@ -34,7 +34,7 @@
   .challenge-image-container {
     flex: 1;
     img {
-      width: 40vw;
+      width: 30vw;
       height: auto;
       border-radius: 8px;
     }
