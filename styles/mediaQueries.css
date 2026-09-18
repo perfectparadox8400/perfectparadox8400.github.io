@@ -43,6 +43,10 @@
   }
   .vid-grid {
     grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border: #4d086f solid 5px;
   }
   .main-image {
     grid-template-columns: 1fr;
